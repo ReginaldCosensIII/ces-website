@@ -1630,3 +1630,11 @@ a:hover {
   color: var(--color-dark-slate);
   margin-bottom: 1.5rem;
 }
+
+.event-card-img {
+  width: 100%;        /* Forces the image to fill the width of its container */
+  max-width: 100%;    /* Prevents the image from overflowing */
+  height: auto;       /* Maintains the perfect aspect ratio automatically */
+  object-fit: cover;  /* Ensures it fills the space beautifully if you set a fixed height */
+  display: block;     /* Removes weird bottom margins inline images sometimes have */
+}
