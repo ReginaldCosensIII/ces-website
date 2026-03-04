@@ -574,7 +574,11 @@ a:hover {
   font-size: 1.4rem;
   line-height: 1.7;
   color: var(--color-text);
+<<<<<<< HEAD
+  margin: .8 0 0 0;
+=======
   margin: 0.8rem 0 0 0;
+>>>>>>> origin/main
   position: relative;
   z-index: 2;
   overflow-wrap: break-word;
@@ -1467,4 +1471,174 @@ a:hover {
 
 .stat-badge--bolt {
   --stat-icon: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\<path d="M11 21l1-7H8l6-11-1 7h4l-6 11z"/>\</svg>');
+}
+
+/* ========== SEMINAR SECTION ========== */
+
+.seminar-registration-area {
+  padding: 4rem 0;
+  background-color: var(--color-bg-light);
+}
+
+.seminar-card {
+  border-top: 6px solid var(--color-maroon);
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.seminar-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.seminar-header .section-heading {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+}
+
+.seminar-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark-slate-light);
+  margin: 0;
+}
+
+.seminar-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .seminar-content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.seminar-topic {
+  background-color: #fbfcfc;
+  padding: 1.75rem;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.topic-title {
+  color: var(--color-dark-slate);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  border-bottom: 3px solid var(--color-light-green);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.seminar-topic p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.seminar-action {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.seminar-action .conclusion-text {
+  font-size: 1.2rem;
+  color: var(--color-dark-slate);
+  margin-bottom: 1.5rem;
+}
+
+/* ========== SEMINAR SECTION ========== */
+
+.seminar-registration-area {
+  padding: 4rem 0 5rem;
+  background-color: var(--color-bg-light);
+}
+
+.seminar-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.seminar-header .section-heading {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+}
+
+.seminar-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-maroon);
+  margin: 0;
+}
+
+/* Featured Image Styling */
+.seminar-hero-image {
+  max-width: 800px;
+  /* Reduced from 900px so it sits inside the width of the card below */
+  width: 95%;
+  /* Keeps it responsive on mobile devices */
+  margin: 0 auto 2.5rem auto;
+  /* Centers it and adds a little extra breathing room below */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.seminar-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 450px;
+}
+
+.seminar-single-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: left;
+  height: auto;
+}
+
+.seminar-topic {
+  margin-bottom: 1.5rem;
+}
+
+.seminar-topic .topic-title {
+  color: var(--color-dark-slate);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.seminar-topic p {
+  color: var(--color-dark-slate);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.seminar-action {
+  text-align: center;
+}
+
+.seminar-action .conclusion-text {
+  font-size: 1.2rem;
+  color: var(--color-dark-slate);
+  margin-bottom: 1.5rem;
+}
+
+.event-card-img {
+  width: 100%;        /* Forces the image to fill the width of its container */
+  max-width: 100%;    /* Prevents the image from overflowing */
+  height: auto;       /* Maintains the perfect aspect ratio automatically */
+  object-fit: cover;  /* Ensures it fills the space beautifully if you set a fixed height */
+  display: block;     /* Removes weird bottom margins inline images sometimes have */
 }
