@@ -80,18 +80,57 @@
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-gradient-overlay"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-headline">Your Trusted Partner for IT Support in Frederick, MD</h1>
-                    <p class="hero-sub-headline">Providing reliable Managed IT Services, Cybersecurity, and VoIP solutions to businesses across the Frederick area for over 30 years.</p>
-                    <div class="hero-buttons">
-                        <a href="#" onclick="window.open('/book-call-form.html', 'BookACall', 'width=700,height=800,scrollbars=yes'); return false;" class="button-primary">Book a 15 Minute Call</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="hero hero--video"
+      aria-label="CES IT Services — trusted IT partner for Frederick, DC Metro, Northern Virginia"
+      data-allow-motion="true">
+
+      <div class="hero__media">
+
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+          poster="/media/hero/poster-1080.jpg">
+
+          <source src="/media/hero/hero-2560.webm" type="video/webm" media="(min-width: 1441px)">
+          <source src="/media/hero/hero-1080.webm" type="video/webm" media="(min-width: 769px)">
+          <source src="/media/hero/hero-mobile.webm" type="video/webm" media="(max-width: 768px)">
+          <source src="/media/hero/hero-2560.mp4" type="video/mp4" media="(min-width: 1441px)">
+          <source src="/media/hero/hero-1080.mp4" type="video/mp4" media="(min-width: 769px)">
+          <source src="/media/hero/hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+
+          <img src="/media/hero/poster-1080.jpg" alt="IT professional at workstation in a modern operations room">
+        </video>
+
+        <div class="hero__scrim" aria-hidden="true"></div>
+
+        <noscript>
+          <img src="/media/hero/poster-1080.jpg" alt="IT professional at workstation in a modern operations room"
+            style="width:100%;height:auto;display:block;">
+        </noscript>
+      </div>
+
+      <div class="container hero__container">
+        <aside class="hero__card hero__card--pullout" role="region" aria-label="Intro and primary actions">
+          <h1 class="hero__headline">
+            Your Trusted Partner for IT Support in Frederick, MD
+          </h1>
+
+          <p class="hero__sub">
+            Providing reliable Managed IT Services, Cybersecurity, and VoIP solutions to businesses across the Frederick area for over 30 years.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#"
+              onclick="window.open('/book-call-form.html','BookACall','width=700,height=800,scrollbars=yes'); return false;"
+              class="button-primary">Book a 15 Minute Call</a>
+
+          </div>
+        </aside>
+      </div>
+
+      <div class="stat-badge stat-badge--stopwatch">
+        <span class="stat-badge__icon" aria-hidden="true"></span>
+        <span class="stat-badge__label">CES 2–5 minute tech response is unmatched</span>
+      </div>
+    </section>
 
         <section class="questions-section">
             <div class="cta-banner">
@@ -429,5 +468,29 @@
     }
     </script>
     
+
+    <script>
+        (function () {
+            function choosePoster(w) {
+                if (w <= 768) return '/media/hero/poster-mobile.jpg';
+                if (w <= 1440) return '/media/hero/poster-1080.jpg';
+                return '/media/hero/poster-2560.jpg';
+            }
+            function setPoster() {
+                var v = document.querySelector('.hero__video');
+                if (!v) return;
+                var w = window.innerWidth || document.documentElement.clientWidth;
+                var p = choosePoster(w);
+                if (v.getAttribute('poster') !== p) {
+                    v.setAttribute('poster', p);
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setPoster);
+            } else {
+                setPoster();
+            }
+        })();
+    </script>
 </body>
 </html>
