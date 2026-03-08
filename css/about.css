@@ -187,11 +187,31 @@
 }
 
 .about-page .anniversary-text p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     margin-bottom: 2rem;
     color: #f0f0f0;
     max-width: 600px;
+}
+
+.anniversary-quote {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-white);
+    border-left: 4px solid #D4AF37;
+    margin: 0 0 1.5rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.anniversary-quote footer {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #D4AF37;
+    margin-top: 0.5rem;
+    font-style: normal;
 }
 
 /* Fix CTA Button text visibility */
@@ -269,6 +289,27 @@
     padding-top: 6rem;
     padding-bottom: 6rem;
     background-color: var(--color-bg-light);
+}
+
+.podcast-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.podcast-btn {
+    background-color: #CC0000;
+    border-color: #CC0000;
+    color: white;
+}
+
+.podcast-btn:hover {
+    background-color: transparent;
+    border-color: #CC0000;
+    color: #CC0000;
 }
 
 .podcast-grid {
