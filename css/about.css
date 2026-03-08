@@ -53,7 +53,8 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
-    max-width: 1200px;
+    max-width: 1400px;
+    /* Increased from 1200px to allow larger images */
     margin: 0 auto;
     align-items: center;
 }
@@ -102,8 +103,17 @@
 /* Desktop layout rules for the split components */
 @media (min-width: 992px) {
     .content-split-layout {
-        grid-template-columns: 1fr 1fr;
         gap: 5rem;
+    }
+
+    /* Image gets 1.25fr, text gets 1fr */
+    .content-split-layout.row-standard {
+        grid-template-columns: 1.25fr 1fr;
+    }
+
+    /* Text gets 1fr, image gets 1.25fr */
+    .content-split-layout.row-reverse {
+        grid-template-columns: 1fr 1.25fr;
     }
 
     /* Row 1: Image Left, Text Right */
@@ -134,7 +144,8 @@
 }
 
 .about-page .anniversary-content {
-    max-width: 1000px;
+    max-width: 1200px;
+    /* Increased from 1000px to give the larger badge room */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -145,8 +156,9 @@
 
 /* Image-based Anniversary Badge */
 .about-page .anniversary-badge {
-    width: 170px;
-    height: 170px;
+    width: 260px;
+    /* Increased massively to make the badge prominent */
+    height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
