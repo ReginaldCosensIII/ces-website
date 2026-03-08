@@ -53,8 +53,8 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
-    max-width: 1400px;
-    /* Increased from 1200px to allow larger images */
+    max-width: 1200px;
+    /* Restored to site standard */
     margin: 0 auto;
     align-items: center;
 }
@@ -107,14 +107,14 @@
         gap: 5rem;
     }
 
-    /* Image gets 1.25fr, text gets 1fr */
+    /* Image gets 1.5fr, text gets 1fr */
     .content-split-layout.row-standard {
-        grid-template-columns: 1.25fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
     }
 
-    /* Text gets 1fr, image gets 1.25fr */
+    /* Text gets 1fr, image gets 1.5fr */
     .content-split-layout.row-reverse {
-        grid-template-columns: 1fr 1.25fr;
+        grid-template-columns: 1fr 1.5fr;
     }
 
     /* Row 1: Image Left, Text Right */
