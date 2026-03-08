@@ -143,42 +143,22 @@
     justify-content: center;
 }
 
-/* Updated Badge with Gold Accents */
+/* Image-based Anniversary Badge */
 .about-page .anniversary-badge {
-    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-    border-radius: 50%;
     width: 170px;
     height: 170px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 4px #D4AF37;
-    /* Gold inner accent */
-    border: 3px solid #D4AF37;
-    /* Gold outer boundary */
-    background-clip: padding-box;
 }
 
-.about-page .badge-number {
-    font-weight: 800;
-    font-size: 2.5rem;
-    line-height: 1.1;
-    margin-bottom: 0.2rem;
-    color: #376363;
-    /* Dark slate text to fix visibility issue */
-    text-align: center;
-}
-
-.about-page .badge-text {
-    font-size: 0.95rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #D4AF37;
-    /* Gold accent color */
-    letter-spacing: 1px;
-    text-align: center;
+.about-page .anniversary-badge img.badge-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Optional: Small drop shadow to make the PNG pop on the slate background */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
 }
 
 .about-page .anniversary-text {
