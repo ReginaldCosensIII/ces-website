@@ -39,21 +39,107 @@
     line-height: 1.6;
 }
 
-/* 30 Year Banner */
+/* --- Alternating Text/Image Split Sections --- */
+.content-split-section {
+    padding: 6rem 1rem;
+    background-color: var(--color-white);
+}
+
+.content-split-section.alt-bg {
+    background-color: var(--color-bg-light);
+}
+
+.content-split-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.content-split-text {
+    order: 2;
+}
+
+.content-split-image {
+    order: 1;
+    text-align: center;
+}
+
+.content-split-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.content-split-text h2 {
+    color: var(--color-dark-slate);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Accent line under headers */
+.content-split-text h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-brand);
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.content-split-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+/* Desktop layout rules for the split components */
+@media (min-width: 992px) {
+    .content-split-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    /* Row 1: Image Left, Text Right */
+    .row-standard .content-split-image {
+        order: 1;
+    }
+
+    .row-standard .content-split-text {
+        order: 2;
+    }
+
+    /* Row 2: Text Left, Image Right */
+    .row-reverse .content-split-image {
+        order: 2;
+    }
+
+    .row-reverse .content-split-text {
+        order: 1;
+    }
+}
+
+
+/* --- 30 Year Banner --- */
 .about-page .anniversary-banner {
     background-color: var(--color-dark-slate);
     color: var(--color-white);
     padding: 5rem 1rem;
-    margin-top: 4rem;
 }
 
 .about-page .anniversary-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
     justify-content: center;
 }
 
@@ -68,7 +154,9 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    background-clip: padding-box;
 }
 
 .about-page .anniversary-text {
@@ -78,36 +166,29 @@
 
 .about-page .anniversary-text h2 {
     color: white;
-    margin-bottom: 1rem;
-    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
     margin-top: 0;
 }
 
 .about-page .anniversary-text p {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: #f0f0f0;
+    max-width: 600px;
 }
 
 @media (max-width: 768px) {
     .about-page .anniversary-text {
         text-align: center;
     }
+
+    .about-page .anniversary-text p {
+        margin: 0 auto 2rem auto;
+    }
 }
 
-/* History Content */
-.about-page .history-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--color-text);
-}
-
-.about-page .history-content p {
-    margin-bottom: 1.5rem;
-}
 
 /* Page-Specific Tombstone Styles */
 .about-page .final-banner {
