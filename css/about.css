@@ -433,9 +433,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 125px;
     height: 2px;
-    background-color: var(--color-maroon);
+    background-color: var(--color-dark-slate);
     opacity: 0.3;
     transition: all 0.4s ease;
 }
