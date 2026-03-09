@@ -399,11 +399,16 @@
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
-    border: 1px solid transparent;
+    border: 1px solid #eaeaea;
+    /* Premium default border */
+    border-bottom: 4px solid var(--color-light-green);
+    /* Default brand anchor */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    /* Soft default shadow */
     z-index: 1;
 }
 
-/* Animated hover fill (Sweep up from bottom) */
+/* Animated hover fill (Sweep up from bottom) using Maroon */
 .about-page .product-item::before {
     content: '';
     position: absolute;
@@ -411,13 +416,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-light-green);
+    background-color: var(--color-maroon);
     transition: top 0.4s ease;
     z-index: -1;
 }
 
 .about-page .product-image>div {
     transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* Premium depth for the icon circle */
 }
 
 .about-page .product-image svg {
@@ -429,13 +436,14 @@
 /* Hover State Changes */
 .about-page .product-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(133, 204, 170, 0.3);
-    border-color: var(--color-light-green);
+    box-shadow: 0 15px 35px rgba(102, 0, 51, 0.25);
+    /* Subtle maroon glow shadow */
+    border-color: var(--color-maroon);
 }
 
 .about-page .product-item:hover::before {
     top: 0;
-    /* Sweeps the green background up */
+    /* Sweeps the maroon background up */
 }
 
 .about-page .product-item:hover h3,
@@ -448,6 +456,7 @@
 }
 
 .about-page .product-item:hover .product-image svg {
-    fill: var(--color-light-green) !important;
+    fill: var(--color-maroon) !important;
+    /* Maroon icon inside white circle */
     transform: scale(1.1);
 }
