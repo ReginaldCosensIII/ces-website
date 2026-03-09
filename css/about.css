@@ -340,6 +340,18 @@
     background-color: #000;
 }
 
+.podcast-video-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
 .podcast-video-wrapper img {
     position: absolute;
     top: 0;
@@ -348,6 +360,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0.8;
+    z-index: 0;
 }
 
 .play-button-overlay {
@@ -359,6 +372,13 @@
     font-size: 3rem;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     pointer-events: none;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.podcast-card:hover .play-button-overlay {
+    transform: translate(-50%, -50%) scale(1.15);
+    color: #CC0000;
 }
 
 .podcast-title {
@@ -367,4 +387,67 @@
     font-size: 1.25rem;
     color: var(--color-dark-slate);
     text-align: center;
+}
+
+/* --- Mission Cards Modernization --- */
+.about-page .products-grid {
+    align-items: stretch;
+}
+
+.about-page .product-item {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+    z-index: 1;
+}
+
+/* Animated hover fill (Sweep up from bottom) */
+.about-page .product-item::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-light-green);
+    transition: top 0.4s ease;
+    z-index: -1;
+}
+
+.about-page .product-image>div {
+    transition: all 0.4s ease;
+}
+
+.about-page .product-image svg {
+    transition: all 0.4s ease;
+    width: 45px !important;
+    height: 45px !important;
+}
+
+/* Hover State Changes */
+.about-page .product-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(133, 204, 170, 0.3);
+    border-color: var(--color-light-green);
+}
+
+.about-page .product-item:hover::before {
+    top: 0;
+    /* Sweeps the green background up */
+}
+
+.about-page .product-item:hover h3,
+.about-page .product-item:hover p {
+    color: var(--color-white) !important;
+}
+
+.about-page .product-item:hover .product-image>div {
+    background-color: var(--color-white) !important;
+}
+
+.about-page .product-item:hover .product-image svg {
+    fill: var(--color-light-green) !important;
+    transform: scale(1.1);
 }
