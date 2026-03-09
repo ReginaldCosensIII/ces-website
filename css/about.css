@@ -421,6 +421,25 @@
     z-index: -1;
 }
 
+.about-page .product-image {
+    position: relative;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-page .product-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-maroon);
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
 .about-page .product-image>div {
     transition: all 0.4s ease;
     background-color: transparent !important;
@@ -442,6 +461,11 @@
     box-shadow: 0 15px 35px rgba(133, 204, 170, 0.3);
     /* Subtle light-green glow shadow */
     border-color: var(--color-light-green);
+}
+
+.about-page .product-item:hover .product-image::after {
+    background-color: var(--color-white);
+    opacity: 0.6;
 }
 
 .about-page .product-item:hover::before {
