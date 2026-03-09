@@ -439,7 +439,9 @@
     transition: all 0.4s ease;
     width: 60px !important;
     height: 60px !important;
-    fill: var(--color-maroon) !important;
+    fill: none !important;
+    color: var(--color-maroon) !important;
+    stroke: var(--color-maroon) !important;
     /* Maroon icon accent in resting state */
 }
 
@@ -475,7 +477,9 @@
 }
 
 .about-page .product-item:hover .product-image svg {
-    fill: var(--color-white) !important;
+    fill: none !important;
+    color: var(--color-white) !important;
+    stroke: var(--color-white) !important;
     /* pure white icon inside green card on hover */
     transform: scale(1.15) translateY(-5px);
 }
