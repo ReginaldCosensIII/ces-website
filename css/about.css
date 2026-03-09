@@ -401,8 +401,8 @@
     transition: all 0.4s ease;
     border: 1px solid #eaeaea;
     /* Premium default border */
-    border-bottom: 4px solid var(--color-maroon);
-    /* Default brand anchor using maroon */
+    border-bottom: 4px solid var(--color-light-green);
+    /* Default brand anchor using light green */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     /* Soft default shadow */
     z-index: 1;
@@ -423,14 +423,15 @@
 
 .about-page .product-image>div {
     transition: all 0.4s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    /* Premium depth for the icon circle */
+    background-color: transparent !important;
+    box-shadow: none;
+    /* Make the background completely transparent so no circle shows */
 }
 
 .about-page .product-image svg {
     transition: all 0.4s ease;
-    width: 45px !important;
-    height: 45px !important;
+    width: 60px !important;
+    height: 60px !important;
     fill: var(--color-maroon) !important;
     /* Maroon icon accent in resting state */
 }
@@ -453,12 +454,8 @@
     color: var(--color-white) !important;
 }
 
-.about-page .product-item:hover .product-image>div {
-    background-color: var(--color-white) !important;
-}
-
 .about-page .product-item:hover .product-image svg {
-    fill: var(--color-light-green) !important;
-    /* Light-green icon inside white circle on hover */
+    fill: var(--color-white) !important;
+    /* pure white icon inside green card on hover */
     transform: scale(1.1);
 }
