@@ -369,23 +369,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #CC0000;
+    font-size: 3rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     pointer-events: none;
     z-index: 2;
     transition: all 0.3s ease;
 }
 
-.play-button-overlay svg {
-    color: #CC0000;
-    stroke: #CC0000;
-    fill: currentColor;
-    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
-    transition: all 0.3s ease;
-}
-
-.podcast-card:hover .play-button-overlay svg {
-    transform: scale(1.15);
+.podcast-card:hover .play-button-overlay {
+    transform: translate(-50%, -50%) scale(1.15);
     color: #FF1A1A;
-    stroke: #FF1A1A;
 }
 
 .podcast-title {
