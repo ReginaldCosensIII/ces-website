@@ -452,27 +452,14 @@
 
 .about-page .product-item h3 {
     color: var(--color-dark-green);
-    position: relative;
-    padding-bottom: 0.75rem;
     margin-bottom: 1rem;
-    display: inline-block;
-}
-
-.about-page .product-item h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-dark-slate);
-    opacity: 0.3;
     transition: all 0.4s ease;
 }
 
-.about-page .product-item:hover h3::after {
-    background-color: var(--color-white);
-    opacity: 0.6;
+.about-page .product-item p {
+    color: var(--color-text);
+    opacity: 0.85;
+    transition: all 0.4s ease;
 }
 
 .about-page .product-item:hover::before {
@@ -483,10 +470,11 @@
 .about-page .product-item:hover h3,
 .about-page .product-item:hover p {
     color: var(--color-white) !important;
+    opacity: 1;
 }
 
 .about-page .product-item:hover .product-image svg {
     fill: var(--color-white) !important;
     /* pure white icon inside green card on hover */
-    transform: scale(1.1);
+    transform: scale(1.15) translateY(-5px);
 }
