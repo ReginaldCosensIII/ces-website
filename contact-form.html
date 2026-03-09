@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex">
     <title>CES IT Services - Contact Form</title>
-    
+
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/contact-forms.css" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4XTG0R754"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-T4XTG0R754');
     </script>
-    
+
 </head>
+
 <body class="popup-body">
 
     <div class="popup-container">
@@ -30,8 +32,10 @@
         </header>
 
         <!-- Form action and hidden fields now match the legacy contact form -->
-        <form id="keapForm" accept-charset="UTF-8" action="https://nks94.infusionsoft.com/app/form/process/a1087e9c3bd1f0d3fafcfb1f88a3bbcd" method="POST" class="contact-form">
-            
+        <form id="keapForm" accept-charset="UTF-8"
+            action="https://nks94.infusionsoft.com/app/form/process/a1087e9c3bd1f0d3fafcfb1f88a3bbcd" method="POST"
+            class="contact-form">
+
             <input type="text" name="honeypot" class="honeypot" autocomplete="off" />
             <input name="inf_form_xid" type="hidden" value="a1087e9c3bd1f0d3fafcfb1f88a3bbcd" />
             <input name="inf_form_name" type="hidden" value="Contact Us Web Form" />
@@ -62,7 +66,7 @@
                 <label for="inf_field_Phone1">Phone</label>
                 <input id="inf_field_Phone1" name="inf_field_Phone1" type="tel" />
             </div>
-            
+
             <div class="form-group">
                 <label for="inf_custom_MessageDescription">Message</label>
                 <textarea id="inf_custom_MessageDescription" name="inf_custom_MessageDescription" rows="5"></textarea>
@@ -81,7 +85,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- Form Submission Validation ---
-            document.getElementById('keapForm').addEventListener('submit', function(event) {
+            document.getElementById('keapForm').addEventListener('submit', function (event) {
                 const honeypot = document.querySelector('input[name="honeypot"]').value;
                 if (honeypot) {
                     event.preventDefault();
@@ -93,7 +97,7 @@
             const formTitle = document.getElementById('form-title');
             const formDescription = document.getElementById('form-description');
             const submitButton = document.getElementById('submit-button');
-            
+
             const urlParams = new URLSearchParams(window.location.search);
             const reason = urlParams.get('reason');
 
@@ -106,9 +110,9 @@
                     buttonText: 'Request My Consultation'
                 },
                 'managed-it': {
-                    title: 'Request a Managed IT Services Consultation',
+                    title: 'Request a Managed IT Service Consultation',
                     description: 'Complete the form below to schedule your free, no-obligation consultation with our IT experts.',
-                    message: 'I am interested in learning more about your Managed IT Services. Please contact me for a free consultation.',
+                    message: 'I am interested in learning more about your Managed IT Service. Please contact me for a free consultation.',
                     buttonText: 'Request My Consultation'
                 },
                 'cybersecurity': {
@@ -153,4 +157,5 @@
         });
     </script>
 </body>
+
 </html>

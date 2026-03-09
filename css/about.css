@@ -78,7 +78,8 @@
 
 .content-split-text h2 {
     color: var(--color-dark-slate);
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 1.5rem;
     position: relative;
 }
@@ -183,6 +184,7 @@
     color: white;
     margin-bottom: 1.5rem;
     font-size: 2.5rem;
+    font-weight: bold;
     margin-top: 0;
 }
 
