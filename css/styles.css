@@ -159,7 +159,7 @@ a:hover {
   color: var(--color-maroon);
   font-style: italic;
   display: none;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .contact-dba-text {
@@ -168,7 +168,7 @@ a:hover {
   color: var(--color-maroon);
   font-style: italic;
   display: none;
-  line-height: 1.1;
+  line-height: 1;
   margin-top: 0.25rem;
 }
 
