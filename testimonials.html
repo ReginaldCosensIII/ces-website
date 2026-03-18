@@ -341,73 +341,61 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/testimonials.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.cesitservice.com/#professionalService",
+        "name": "CES IT Services",
+        "image": "https://www.cesitservice.com/images/ceslogo.png",
+        "url": "https://www.cesitservice.com/",
+        "telephone": "+1-301-620-1580",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1530 Tilco Drive - Unit C",
+          "addressLocality": "Frederick",
+          "addressRegion": "MD",
+          "postalCode": "21704",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.39828834136846",
+          "longitude": "-77.38313313071608"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+          "sameAs": [
+            "https://www.facebook.com/ComputerEnhancementSystems",
+            "https://x.com/cesitservice",
+            "https://www.linkedin.com/company/computer-enhancement-systems"
+          ]
+        },
         {
           "@type": "WebPage",
           "name": "Client Testimonials for CES IT Services",
           "url": "https://www.cesitservice.com/testimonials",
           "reviewedBy": {
             "@id": "https://www.cesitservice.com/#professionalService"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "reviewBody": "Since transitioning to CES as a break/fix I.T. company to a managed I.T. service provider, the most significant benefit for me and my company has been reliable and proactive support... Choose CES for their dedication to customer success, technical proficiency, and unwavering support.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "author": { "@type": "Person", "name": "Bill, CEO" },
-              "publisher": { "@type": "Organization", "name": "Valogic Bio, LLC" }
-            },
-            {
-              "@type": "Review",
-              "reviewBody": "The biggest benefit of working with CES is having a team of trusted, knowledgeable technicians who are available to us anytime and can assist us... This customer service aspect is very important to us and sets them apart from other companies we have used.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "author": { "@type": "Person", "name": "Rachel Atkins" },
-              "publisher": { "@type": "Organization", "name": "Advanced Implants and Periodontics" }
-            },
-            {
-              "@type": "Review",
-              "reviewBody": "One of the biggest things that CES has provided myself and our company is peace of mind... We can take care of business knowing that CES has our back regarding the efficiency of our systems and the security of our data.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "author": { "@type": "Person", "name": "Joe, CEO, President" },
-              "publisher": { "@type": "Organization", "name": "United States Antenna Products, LLC" }
-            },
-            {
-              "@type": "Review",
-              "reviewBody": "Having CES as our I.T. managed service provider, gives me the confidence I need knowing that all of our I.T. needs will be handled quickly, efficiently, and at an economical price.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "author": { "@type": "Person", "name": "Sean, Town Manager" },
-              "publisher": { "@type": "Organization", "name": "Town of Walkersville, MD" }
-            },
-            {
-              "@type": "Review",
-              "reviewBody": "The biggest benefit I have noticed from transitioning from break/fix to managed I.T. service is convenience, but also the quick response of the CES Helpdesk app. I completely trust them to take care of me as they have for two decades.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "author": { "@type": "Person", "name": "Dave" },
-              "publisher": { "@type": "Organization", "name": "Bucheimer Design and Build" }
-            },
-            {
-              "@type": "Review",
-              "reviewBody": "We've been thrilled with the service we have gotten from CES since the start of our 11/1/23 contract.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-              "author": { "@type": "Person", "name": "Karen" },
-              "publisher": { "@type": "Organization", "name": "Frederick Elks Lodge" }
-            }
-          ]
+          }
         },
-        { "@type": "WebSite", "url": "https://www.cesitservice.com/" },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "position": 1, "name": "Home", "item": "https://www.cesitservice.com/" },
-            { "position": 2, "name": "Testimonials", "item": "https://www.cesitservice.com/testimonials" }
-          ]
-        }
-      ]
-    }
-    </script>
+      { "@type": "WebSite", "url": "https://www.cesitservice.com/" },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "position": 1, "name": "Home", "item": "https://www.cesitservice.com/" },
+          { "position": 2, "name": "Testimonials", "item": "https://www.cesitservice.com/testimonials" }
+        ]
+      }
+    ]
+  }
+  </script>
 </body>
 
 </html>

@@ -71,7 +71,9 @@
 .content-split-image img {
     max-width: 100%;
     width: 100%;
-    height: auto;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 12px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }

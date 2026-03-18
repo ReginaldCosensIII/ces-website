@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -501,51 +501,83 @@
             }
         });
     </script>
-    <script type="application/ld+json">
-    {
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
     "@graph": [
-        {
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.cesitservice.com/#professionalService",
+        "name": "CES IT Services",
+        "image": "https://www.cesitservice.com/images/ceslogo.png",
+        "url": "https://www.cesitservice.com/",
+        "telephone": "+1-301-620-1580",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1530 Tilco Drive - Unit C",
+          "addressLocality": "Frederick",
+          "addressRegion": "MD",
+          "postalCode": "21704",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.39828834136846",
+          "longitude": "-77.38313313071608"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+          "sameAs": [
+            "https://www.facebook.com/ComputerEnhancementSystems",
+            "https://x.com/cesitservice",
+            "https://www.linkedin.com/company/computer-enhancement-systems"
+          ]
+        },
+      {
         "@type": "Service",
         "@id": "https://www.cesitservice.com/video-surveillance#service",
         "name": "AI Driven Video Surveillance",
         "description": "CES delivers advanced AI-integrated video surveillance solutions and a wide range of IP-based technologies to protect your employees, property, and assets.",
         "serviceType": "AI Driven Video Surveillance",
         "provider": {
-            "@id": "https://www.cesitservice.com/#professionalService"
+          "@id": "https://www.cesitservice.com/#professionalService"
         },
         "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
             "@type": "GeoCoordinates",
             "latitude": "39.39828834136846",
             "longitude": "-77.38313313071608"
-            },
-            "geoRadius": "50"
+          },
+          "geoRadius": "50"
         },
         "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Surveillance Hardware Options",
-            "itemListElement": [
+          "@type": "OfferCatalog",
+          "name": "Surveillance Hardware Options",
+          "itemListElement": [
             { "itemOffered": { "@type": "Product", "name": "Dome Cameras" }},
             { "itemOffered": { "@type": "Product", "name": "PTZ (Pan-Tilt-Zoom) Cameras" }},
             { "itemOffered": { "@type": "Product", "name": "Panoramic Cameras" }},
             { "itemOffered": { "@type": "Product", "name": "Wearable & Discreet Cameras" }},
             { "itemOffered": { "@type": "Product", "name": "Explosion-Protected Cameras" }}
-            ]
+          ]
         }
-        },
-        { "@type": "WebSite", "url": "https://www.cesitservice.com/" },
-        {
+      },
+      { "@type": "WebSite", "url": "https://www.cesitservice.com/" },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "position": 1, "name": "Home", "item": "https://www.cesitservice.com/" },
-            { "position": 2, "name": "AI Driven Video Surveillance", "item": "https://www.cesitservice.com/video-surveillance" }
+          { "position": 1, "name": "Home", "item": "https://www.cesitservice.com/" },
+          { "position": 2, "name": "AI Driven Video Surveillance", "item": "https://www.cesitservice.com/video-surveillance" }
         ]
-        }
+      }
     ]
-    }
-    </script>
+  }
+  </script>
 
 </body>
 
