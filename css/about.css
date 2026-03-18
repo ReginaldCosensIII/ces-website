@@ -1,4 +1,4 @@
-﻿/*
+/*
  * ===============================================
  * PAGE-SPECIFIC STYLES: About Us
  * ===============================================
@@ -246,7 +246,7 @@
 
 /* Page-Specific Tombstone Styles */
 .about-page .final-banner {
-    height: 80px;
+    height: 95px;
 }
 
 .about-page .tombstone-container {
@@ -263,12 +263,12 @@
 
 .about-page .tombstone {
     width: 260px;
-    height: 170px;
+    height: 185px;
     background-color: #85CCAA;
-    border-radius: 85px 85px 0 0;
+    border-radius: 93px 93px 0 0;
     color: white;
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,10 +281,11 @@
 
 .about-page .tombstone p {
     margin: 0;
-    line-height: 1.4;
-    font-size: 1.5rem;
+    line-height: 1.25;
+    font-size: 1.05rem;
     font-weight: 600;
     color: white;
+    letter-spacing: 0.01em;
 }
 
 /* --- Podcast Section --- */
