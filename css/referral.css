@@ -13,17 +13,11 @@
 
 
 /* -----------------------------------------------
-   1. Hero — reuses .page-hero from supporting-styles.
-      Only override needed: subheading color on hero.
+   1. Hero — uses default .page-hero light-green bg
+      from supporting-styles.css (no override needed).
+      Only tweak: subheading inherits dark-slate from
+      supporting-styles automatically.
    ----------------------------------------------- */
-.referral-page .page-hero {
-    background-color: var(--color-dark-slate);
-}
-
-.referral-page .page-hero-subheading {
-    color: rgba(255, 255, 255, 0.88);
-    font-weight: 500;
-}
 
 
 /* -----------------------------------------------
@@ -46,8 +40,8 @@
 
 @media (min-width: 992px) {
     .referral-two-col {
-        grid-template-columns: 1fr 1.1fr;
-        gap: 4rem;
+        grid-template-columns: 1.9fr 1fr;
+        gap: 3rem;
     }
 }
 
@@ -62,13 +56,13 @@
     margin: 0 0 0.5rem 0;
 }
 
-/* Underline accent matching the site's pattern */
+/* Underline accent — maroon for stronger brand presence */
 .referral-content-col h2::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
-    background-color: var(--color-light-green);
+    background-color: var(--color-maroon);
     margin-top: 0.65rem;
     border-radius: 2px;
 }
@@ -98,14 +92,14 @@
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    border-left: 4px solid var(--color-dark-slate);
+    border-left: 4px solid var(--color-light-green);
 }
 
 .referral-step-num {
     flex-shrink: 0;
     width: 36px;
     height: 36px;
-    background-color: var(--color-dark-slate);
+    background-color: var(--color-maroon);
     color: var(--color-white);
     border-radius: 50%;
     display: flex;
@@ -145,17 +139,15 @@
     margin-bottom: 2rem;
 }
 
+/* Both reward cards share identical style — no .alt distinction */
 .referral-reward-card {
     background-color: var(--color-white);
     border-radius: 8px;
     padding: 1.25rem;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-top: 3px solid var(--color-light-green);
     border-bottom: 3px solid var(--color-light-green);
-}
-
-.referral-reward-card.alt {
-    border-bottom-color: var(--color-maroon);
 }
 
 .referral-reward-card svg {
@@ -167,10 +159,6 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     margin-bottom: 0.5rem;
-}
-
-.referral-reward-card.alt svg {
-    stroke: var(--color-maroon);
 }
 
 .referral-reward-amount {
@@ -212,7 +200,7 @@
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     padding: 2.5rem;
-    border-top: 4px solid var(--color-dark-slate);
+    border-top: 4px solid var(--color-maroon);
 }
 
 .keap-form-title {
@@ -325,14 +313,14 @@
     max-width: 640px;
     width: 100%;
     text-align: center;
-    border-top: 4px solid var(--color-dark-slate);
+    border-top: 4px solid var(--color-maroon);
 }
 
-/* Checkmark circle */
+/* Checkmark circle — maroon accent */
 .thankyou-check {
     width: 72px;
     height: 72px;
-    background-color: var(--color-dark-slate);
+    background-color: var(--color-maroon);
     border-radius: 50%;
     display: flex;
     align-items: center;
