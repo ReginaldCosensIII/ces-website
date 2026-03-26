@@ -182,30 +182,22 @@
   gap: 0.35rem;
 }
 
-/* Chevron icons — only one visible at a time */
+/* Chevron icon — rotates 180° when dropdown is open or hovered */
 .chevron-wrap {
   display: inline-flex;
   align-items: center;
-  margin-left: 2px;
+  margin-left: 4px;
 }
 
 .chevron {
-  display: none;
-}
-
-.chevron--down {
   display: inline-block;
+  transition: transform 0.25s ease;
 }
 
-/* Swap chevrons when dropdown is open (Mobile/Click or Desktop/Hover) */
-.dropdown-open .chevron--down,
-.nav-item--has-dropdown:hover .chevron--down {
-  display: none;
-}
-
-.dropdown-open .chevron--up,
-.nav-item--has-dropdown:hover .chevron--up {
-  display: inline-block;
+/* Rotate to point up when active (both mobile click and desktop hover) */
+.dropdown-open .chevron,
+.nav-item--has-dropdown:hover .chevron {
+  transform: rotate(180deg);
 }
 
 /* Dropdown panel — hidden by default via opacity/visibility (allows transition) */
@@ -238,7 +230,6 @@
   font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   transition: background-color 0.2s ease;
 }
 
@@ -267,9 +258,8 @@
   box-shadow: none;
   border-radius: 0;
   border-top: none;
-  border-left: 3px solid rgba(255, 255, 255, 0.25);
   background-color: transparent;
-  margin-left: 0.75rem;
+  margin-left: 1rem;
   margin-top: 0.25rem;
   /* Use max-height for accordion animation on mobile */
   max-height: 0;
