@@ -55,3 +55,11 @@ When updating the **AI & Cybersecurity Lunch and Learn Seminar** date:
 
 ---
 *Maintained by the CES Development Team*
+
+## 🛠️ Developer Workflow
+
+To maintain professional standards and architectural consistency, all developers should follow the site's standardized workflow:
+
+1. **Standard Flow:** Use the `/standard-task-flow` command to initiate a repeatable development cycle.
+2. **PR Templates:** Always use the **CES Standard PR Template** defined in the project's **Skill** repository (`.agent/SKILL.md`).
+3. **Local Tooling:** The `.agent/` directory contains local-only scripts and patterns that facilitate professional-grade AI-assisted development.
