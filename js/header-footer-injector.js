@@ -60,7 +60,6 @@
                 <li><a href="/managed-services.html">Managed IT Service</a></li>\
                 <li><a href="/video-surveillance.html">AI Video Surveillance</a></li>\
                 <li><a href="/voip-solutions.html">VoIP Solutions</a></li>\
-                <li><a href="/testimonials.html">Testimonials</a></li>\
                 <li class="nav-item--has-dropdown">\
                     <a href="/about.html" class="nav-link--dropdown-parent">About Us\
                         <span class="chevron-wrap">\
@@ -69,6 +68,8 @@
                     </a>\
                     <ul class="nav-dropdown">\
                         <li><a href="/about.html">About Us</a></li>\
+                        <li><a href="/testimonials.html">Testimonials</a></li>\
+                        <li><a href="/referral-program.html">Referral Program</a></li>\
                         <li><a href="/contact-us.html">Contact Us</a></li>\
                     </ul>\
                 </li>\
