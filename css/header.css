@@ -214,8 +214,8 @@
   padding: 0;
   position: absolute;
   top: 100%;
-  left: auto;
-  right: 0;
+  left: 0;
+  right: auto;
   min-width: 170px;
   background-color: #2b4a4a;
   border-top: 2px solid rgba(255, 255, 255, 0.15);
