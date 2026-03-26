@@ -1,0 +1,627 @@
+/* ============================================================
+   referral.css — CES Referral Program Page Styles
+   Brand: Navy (#0a1d37) | Light Blue (#00a1e4) | Orange (#e87722)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   0. CSS Custom Properties (local overrides)
+   ---------------------------------------------------------- */
+:root {
+    --ref-navy:       #0a1d37;
+    --ref-blue:       #00a1e4;
+    --ref-orange:     #e87722;
+    --ref-light-bg:   #f4f7fb;
+    --ref-card-bg:    #ffffff;
+    --ref-text:       #2c3e50;
+    --ref-border:     #d8e4f0;
+    --ref-radius:     8px;
+    --ref-shadow:     0 4px 20px rgba(10, 29, 55, 0.10);
+    --ref-shadow-lg:  0 8px 40px rgba(10, 29, 55, 0.15);
+    --ref-transition: 0.3s ease;
+}
+
+/* ----------------------------------------------------------
+   1. Hero Section
+   ---------------------------------------------------------- */
+.referral-hero {
+    background: linear-gradient(135deg, var(--ref-navy) 0%, #1a3a6e 60%, #0f2a55 100%);
+    color: #ffffff;
+    padding: 6rem 0 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.referral-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300a1e4' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.referral-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.referral-hero-eyebrow {
+    display: inline-block;
+    background: var(--ref-orange);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.referral-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 auto 1.25rem;
+    max-width: 820px;
+}
+
+.referral-hero h1 .accent {
+    color: var(--ref-blue);
+}
+
+.referral-hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.82);
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.65;
+}
+
+.referral-hero-cta {
+    display: inline-block;
+    background: var(--ref-orange);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2.4rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background var(--ref-transition), transform var(--ref-transition), box-shadow var(--ref-transition);
+    box-shadow: 0 4px 15px rgba(232, 119, 34, 0.4);
+}
+
+.referral-hero-cta:hover {
+    background: #d0651a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 119, 34, 0.5);
+}
+
+/* ----------------------------------------------------------
+   2. Section Base Utilities
+   ---------------------------------------------------------- */
+.referral-section {
+    padding: 5rem 0;
+}
+
+.referral-section.alt-bg {
+    background-color: var(--ref-light-bg);
+}
+
+.referral-section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.referral-section-header h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    color: var(--ref-navy);
+    margin-bottom: 0.75rem;
+}
+
+.referral-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--ref-blue);
+    border-radius: 2px;
+    margin: 0 auto 1.25rem;
+}
+
+.referral-section-header p {
+    color: var(--ref-text);
+    font-size: 1.05rem;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ----------------------------------------------------------
+   3. Hook Section (The Opportunity)
+   ---------------------------------------------------------- */
+.hook-card {
+    background: var(--ref-card-bg);
+    border-radius: var(--ref-radius);
+    box-shadow: var(--ref-shadow-lg);
+    padding: 3rem 3.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-left: 5px solid var(--ref-blue);
+}
+
+.hook-icon-wrap {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--ref-navy), #1a3a6e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hook-icon-wrap svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--ref-blue);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hook-text h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--ref-navy);
+    margin-bottom: 1rem;
+}
+
+.hook-text p {
+    color: var(--ref-text);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ----------------------------------------------------------
+   4. Process Section (How It Works)
+   ---------------------------------------------------------- */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.process-card {
+    background: var(--ref-card-bg);
+    border-radius: var(--ref-radius);
+    box-shadow: var(--ref-shadow);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-top: 4px solid var(--ref-navy);
+    transition: transform var(--ref-transition), box-shadow var(--ref-transition);
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ref-shadow-lg);
+}
+
+.process-card:nth-child(2) {
+    border-top-color: var(--ref-orange);
+}
+
+.process-icon-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.process-card:first-child .process-icon-wrap {
+    background: linear-gradient(135deg, #e8f5ff, #cce9fb);
+}
+
+.process-card:nth-child(2) .process-icon-wrap {
+    background: linear-gradient(135deg, #fff4ec, #fde4cc);
+}
+
+.process-icon-wrap svg {
+    width: 38px;
+    height: 38px;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.process-card:first-child .process-icon-wrap svg {
+    stroke: var(--ref-blue);
+}
+
+.process-card:nth-child(2) .process-icon-wrap svg {
+    stroke: var(--ref-orange);
+}
+
+.process-step-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ref-blue);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.process-card:nth-child(2) .process-step-number {
+    color: var(--ref-orange);
+}
+
+.process-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--ref-navy);
+    margin-bottom: 0.75rem;
+}
+
+.process-card p {
+    color: var(--ref-text);
+    font-size: 0.97rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ----------------------------------------------------------
+   5. Reward Choice Cards
+   ---------------------------------------------------------- */
+.reward-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+    color: var(--ref-text);
+    line-height: 1.75;
+}
+
+.reward-choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.reward-choice-card {
+    background: var(--ref-card-bg);
+    border-radius: var(--ref-radius);
+    box-shadow: var(--ref-shadow);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: transform var(--ref-transition), box-shadow var(--ref-transition);
+    border-bottom: 4px solid transparent;
+}
+
+.reward-choice-card.cash {
+    border-bottom-color: var(--ref-blue);
+}
+
+.reward-choice-card.charity {
+    border-bottom-color: var(--ref-orange);
+}
+
+.reward-choice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ref-shadow-lg);
+}
+
+.reward-icon-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.reward-choice-card.cash .reward-icon-wrap {
+    background: linear-gradient(135deg, #e8f5ff, #cce9fb);
+}
+
+.reward-choice-card.charity .reward-icon-wrap {
+    background: linear-gradient(135deg, #fff4ec, #fde4cc);
+}
+
+.reward-icon-wrap svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.reward-choice-card.cash .reward-icon-wrap svg {
+    stroke: var(--ref-blue);
+}
+
+.reward-choice-card.charity .reward-icon-wrap svg {
+    stroke: var(--ref-orange);
+}
+
+.reward-choice-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.reward-choice-card.cash .reward-choice-label {
+    color: var(--ref-blue);
+}
+
+.reward-choice-card.charity .reward-choice-label {
+    color: var(--ref-orange);
+}
+
+.reward-choice-amount {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--ref-navy);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.reward-choice-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ref-navy);
+    margin-bottom: 0.75rem;
+}
+
+.reward-choice-card p {
+    color: var(--ref-text);
+    font-size: 0.93rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ----------------------------------------------------------
+   6. Keap Form Container
+   ---------------------------------------------------------- */
+.form-section {
+    background: var(--ref-light-bg);
+    padding: 5rem 0 6rem;
+}
+
+.form-section .referral-section-header h2 {
+    color: var(--ref-navy);
+}
+
+#keap-form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--ref-card-bg);
+    border-radius: var(--ref-radius);
+    box-shadow: var(--ref-shadow-lg);
+    padding: 3rem 4rem;
+    border-top: 5px solid var(--ref-blue);
+}
+
+/* Style the Keap/Infusionsoft form fields */
+#keap-form-container .infusion-form {
+    width: 100%;
+}
+
+#keap-form-container .title div {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ref-navy);
+    padding: 0.5rem 0 1rem;
+    border-bottom: 2px solid var(--ref-border);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+#keap-form-container .infusion-field {
+    margin-bottom: 1.25rem;
+}
+
+#keap-form-container .infusion-field label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ref-navy);
+    margin-bottom: 0.4rem;
+}
+
+#keap-form-container .infusion-field input[type="text"],
+#keap-form-container .infusion-field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--ref-border);
+    border-radius: 6px;
+    font-size: 0.97rem;
+    color: var(--ref-text);
+    background: #fafcff;
+    transition: border-color var(--ref-transition), box-shadow var(--ref-transition);
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+#keap-form-container .infusion-field input[type="text"]:focus,
+#keap-form-container .infusion-field textarea:focus {
+    outline: none;
+    border-color: var(--ref-blue);
+    box-shadow: 0 0 0 3px rgba(0, 161, 228, 0.15);
+}
+
+#keap-form-container .infusion-field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#keap-form-container .infusion-submit {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#keap-form-container .infusion-submit button[type="submit"] {
+    background: var(--ref-navy);
+    color: #ffffff;
+    border: none;
+    padding: 0.9rem 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background var(--ref-transition), transform var(--ref-transition), box-shadow var(--ref-transition);
+    box-shadow: 0 4px 15px rgba(10, 29, 55, 0.25);
+    letter-spacing: 0.03em;
+}
+
+#keap-form-container .infusion-submit button[type="submit"]:hover {
+    background: var(--ref-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 161, 228, 0.35);
+}
+
+/* ----------------------------------------------------------
+   7. Thank You Page
+   ---------------------------------------------------------- */
+.thankyou-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ref-light-bg);
+    padding: 6rem 0;
+}
+
+.thankyou-card {
+    background: var(--ref-card-bg);
+    border-radius: var(--ref-radius);
+    box-shadow: var(--ref-shadow-lg);
+    padding: 4rem 3.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 5px solid var(--ref-blue);
+}
+
+.thankyou-icon-wrap {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #e8f5ff, #cce9fb);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+}
+
+.thankyou-icon-wrap svg {
+    width: 44px;
+    height: 44px;
+    stroke: var(--ref-blue);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.thankyou-card h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: var(--ref-navy);
+    margin-bottom: 1rem;
+}
+
+.thankyou-card .thankyou-sub {
+    font-size: 1.05rem;
+    color: var(--ref-text);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+}
+
+.thankyou-card .thankyou-sub.highlight {
+    font-weight: 600;
+    color: var(--ref-navy);
+    background: linear-gradient(135deg, #e8f5ff, #cce9fb);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--ref-blue);
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.thankyou-return-btn {
+    display: inline-block;
+    background: var(--ref-navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background var(--ref-transition), transform var(--ref-transition), box-shadow var(--ref-transition);
+    box-shadow: 0 4px 15px rgba(10, 29, 55, 0.25);
+    margin-top: 2rem;
+}
+
+.thankyou-return-btn:hover {
+    background: var(--ref-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 161, 228, 0.35);
+}
+
+/* ----------------------------------------------------------
+   8. Responsive
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .hook-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reward-choices {
+        grid-template-columns: 1fr;
+    }
+
+    #keap-form-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .thankyou-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .referral-hero {
+        padding: 4rem 0 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .referral-hero h1 {
+        font-size: 1.7rem;
+    }
+}
