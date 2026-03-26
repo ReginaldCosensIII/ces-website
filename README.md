@@ -63,3 +63,4 @@ To maintain professional standards and architectural consistency, all developers
 1. **Standard Flow:** Use the `/standard-task-flow` command to initiate a repeatable development cycle.
 2. **PR Templates:** Always use the **CES Standard PR Template** defined in the project's **Skill** repository (`.agent/SKILL.md`).
 3. **Local Tooling:** The `.agent/` directory contains local-only scripts and patterns that facilitate professional-grade AI-assisted development.
+4. **Global Extensions:** This project utilizes the **Global Voice Assistant (TTS)** and **Educational Mentorship** protocols for an enhanced development experience.
