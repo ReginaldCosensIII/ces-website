@@ -194,10 +194,17 @@
   transition: transform 0.25s ease;
 }
 
-/* Rotate to point up when active (both mobile click and desktop hover) */
-.dropdown-open .chevron,
-.nav-item--has-dropdown:hover .chevron {
+/* Rotate to point up when active:
+   - Mobile: only .dropdown-open (JS-driven, no sticky hover issues)
+   - Desktop: hover OR dropdown-open */
+.dropdown-open .chevron {
   transform: rotate(180deg);
+}
+
+@media (min-width: 992px) {
+  .nav-item--has-dropdown:hover .chevron {
+    transform: rotate(180deg);
+  }
 }
 
 /* Dropdown panel — hidden by default via opacity/visibility (allows transition) */
