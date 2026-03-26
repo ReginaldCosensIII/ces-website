@@ -197,12 +197,14 @@
   display: inline-block;
 }
 
-/* Swap chevrons when dropdown is open */
-.dropdown-open .chevron--down {
+/* Swap chevrons when dropdown is open (Mobile/Click or Desktop/Hover) */
+.dropdown-open .chevron--down,
+.nav-item--has-dropdown:hover .chevron--down {
   display: none;
 }
 
-.dropdown-open .chevron--up {
+.dropdown-open .chevron--up,
+.nav-item--has-dropdown:hover .chevron--up {
   display: inline-block;
 }
 
@@ -280,13 +282,15 @@
 }
 
 .nav-active .nav-item--has-dropdown.dropdown-open .nav-dropdown {
-  max-height: 200px;
+  max-height: 250px; /* increased for safety */
+  opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
-/* On mobile, suppress the hover-visible state */
+/* On mobile, suppress the desktop :hover reveal to prevent touch-flicker */
 @media (max-width: 991px) {
-  .nav-item--has-dropdown:hover .nav-dropdown {
+  .nav-item--has-dropdown:not(.dropdown-open):hover .nav-dropdown {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
