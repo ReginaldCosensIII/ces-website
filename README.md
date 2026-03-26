@@ -1,31 +1,57 @@
 # Computer Enhancement Systems (CES) Website
 
-## Global Header and Footer Architecture
+Computer Enhancement Systems, Inc. (dba CES IT Service) provides managed IT services, cybersecurity, VoIP solutions, and AI-driven video surveillance for businesses in the Maryland, DC, and Virginia areas.
 
-The CES website utilizes a **JavaScript-injected global architecture** to ensure maintainability and consistency across all 11+ site pages. Instead of hardcoding the header and footer in every HTML file, the site uses a single-source-of-truth approach.
+This repository contains the source code for the public-facing CES website, designed for high performance, SEO excellence, and easy maintainability.
 
-### Key Components
-- **`header.html` & `footer.html`**: These files contain the primary HTML markup for the global site components.
-- **`js/header-footer-injector.js`**: This script is responsible for the synchronous injection of the header and the asynchronous injection of the footer.
-- **`css/header.css` & `css/footer.css`**: Modular stylesheets containing all styles for their respective components.
+## 🚀 Key Technologies
+- **Core:** HTML5, CSS3, Vanilla JavaScript (ES5/ES6+)
+- **Architecture:** JavaScript-driven global component injection
+- **Performance:** Synchronous head-loading for zero Cumulative Layout Shift (CLS)
+- **Analytics:** Google Tag Manager (GTM) and GA4 integration
 
-### Implementation Strategy
-1. **Zero CLS (Cumulative Layout Shift):** To prevent the page from flickering or shifting upon load, the `header-footer-injector.js` is placed in the `<head>` of every document. It synchronously injects the header HTML before the first paint and uses a temporary `visibility: hidden` guard on the `<body>` to ensure a seamless experience.
-2. **Absolute Path Normalization:** All internal links in the global templates use absolute root paths (e.g., `/index.html`) to ensure correct navigation from any subdirectory, such as `/service-areas/`.
-3. **Event Orchestration:** The injector dispatches a `headerInjected` custom event once the header is in the DOM. The `js/main.js` file waits for this event before attaching navigation-dependent listeners (like the mobile menu toggle).
+## 🏗️ Architecture Overview
 
-### Navigation & Dropdowns
-- **About Us Dropdown:** The "About Us" nav item features a responsive dropdown.
-  - **Desktop:** Interactive hover reveals a panel with links to **About Us** and **Contact Us**.
-  - **Mobile:** The primary tap toggles the dropdown inline within the hamburger menu.
-- **Active State:** The injector automatically applies the `.active` class to the appropriate navigation link based on the current `window.location.pathname`.
+The site utilizes a **component-based injection strategy** to centralize shared infrastructure (Header and Footer) across all 11+ pages.
 
-## Seminar & Event Management
-The site frequently hosts events like the **AI Integration & Cybersecurity Lunch and Learn Seminar**.
-- **Current Seminar Date:** May 21st, 2026.
-- **Updating Dates:** When a seminar date changes, the update typically only needs to happen in `header.html`, `footer.html`, and page-specific content like `index.html` and `ai-seminar-registration.html`.
+### Global Header & Footer
+- **Source Files:** `header.html` and `footer.html` (markup fragments)
+- **Injection Engine:** `js/header-footer-injector.js`
+- **Styling:** `css/header.css` and `css/footer.css` (decoupled from page-specific styles)
 
-## Development Guidelines
-- **Adding Nav Links:** Update the `HEADER_HTML` string constant in `js/header-footer-injector.js` and the corresponding logic in `header.html` for local reference.
-- **Styling:** Always use `css/header.css` for header changes and `css/footer.css` for footer changes. Avoid adding these styles to `styles.css`.
-- **Mobile Menu:** The mobile menu toggle is re-bound automatically by the injector using a DOM node clone pattern to prevent stale event listeners.
+#### Injection Flow:
+1. **Phase 1 (Sync):** The injector script in the `<head>` performs a blocking injection of the header into `#site-header-root`. A temporary `visibility: hidden` guard on `<body>` ensures the page only renders once the header is painted, eliminating layout shifts.
+2. **Phase 2 (Async):** The footer is injected into `#site-footer-root` on `DOMContentLoaded`.
+3. **Event Orchestration:** Dispatches a `headerInjected` event to signal `main.js` that navigation elements are ready for listener attachment.
+
+## 📂 Directory Structure
+- `/css`: Modular stylesheets (`styles.css`, `header.css`, `footer.css`, `about.css`)
+- `/js`: Site logic (`main.js`, `header-footer-injector.js`)
+- `/service-areas`: Location-specific SEO landing pages
+- `/images`: Site-wide assets and photography
+- `header.html`, `footer.html`: Global component fragments
+- `sitemap.xml`, `robots.txt`: SEO configuration
+- `web.config`: IIS server routing and redirect rules
+
+## 💡 Navigational Features
+- **Smart Dropdowns:** The "About Us" menu uses a context-aware implementation:
+  - **Desktop:** CSS hover reveals the dropdown panel.
+  - **Mobile:** JavaScript intercepts the parent click to toggle the dropdown inline within the mobile hamburger menu.
+- **Active States:** Navigation links automatically highlight based on the current URI path.
+- **Path Absolutism:** All internal links use root-absolute paths (e.g., `/index.html`) to support deep-nested subdirectories like `/service-areas/`.
+
+## 🛠️ Maintenance & Content Updates
+
+### Updating Seminar Dates
+When updating the **AI & Cybersecurity Lunch and Learn Seminar** date:
+1. Update `index.html` (Hero and Seminar sections).
+2. Update `ai-seminar-registration.html` (Header and form text).
+3. Update the global `header.html` or `footer.html` if the event is featured in the navigation or sidebar.
+
+### Deployment Guidelines
+- **IIS Requirements:** The site is hosted on Windows Server via IIS.
+- **Redirects:** Use the `web.config` file to manage 301 redirects and enforce lowercase URL normalization.
+- **Testing:** Always deploy to the CES Dev Server and verify navigation and mobile responsiveness before pushing to production.
+
+---
+*Maintained by the CES Development Team*
