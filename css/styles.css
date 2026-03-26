@@ -159,6 +159,18 @@ a:hover {
   color: var(--color-maroon);
   font-style: italic;
   display: none;
+  line-height: 1;
+}
+
+.contact-dba-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-maroon);
+  font-style: italic;
+  display: none;
+  line-height: 1;
+  margin-top: 0.15rem;
+  padding-top: 0.15rem;
 }
 
 .contact-sub-text {
@@ -574,11 +586,7 @@ a:hover {
   font-size: 1.4rem;
   line-height: 1.7;
   color: var(--color-text);
-<<<<<<< HEAD
-  margin: .8 0 0 0;
-=======
   margin: 0.8rem 0 0 0;
->>>>>>> origin/main
   position: relative;
   z-index: 2;
   overflow-wrap: break-word;
@@ -971,6 +979,11 @@ a:hover {
 
   .contact-main-text {
     display: block;
+  }
+
+  .contact-dba-text {
+    display: block;
+    margin-top: 0.25rem;
   }
 
   .hero-section {
@@ -1636,9 +1649,14 @@ a:hover {
 }
 
 .event-card-img {
-  width: 100%;        /* Forces the image to fill the width of its container */
-  max-width: 100%;    /* Prevents the image from overflowing */
-  height: auto;       /* Maintains the perfect aspect ratio automatically */
-  object-fit: cover;  /* Ensures it fills the space beautifully if you set a fixed height */
-  display: block;     /* Removes weird bottom margins inline images sometimes have */
+  width: 100%;
+  /* Forces the image to fill the width of its container */
+  max-width: 100%;
+  /* Prevents the image from overflowing */
+  height: auto;
+  /* Maintains the perfect aspect ratio automatically */
+  object-fit: cover;
+  /* Ensures it fills the space beautifully if you set a fixed height */
+  display: block;
+  /* Removes weird bottom margins inline images sometimes have */
 }
