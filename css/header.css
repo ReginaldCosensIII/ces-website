@@ -1,0 +1,334 @@
+/*
+ * ===============================================
+ * HEADER & NAVIGATION STYLES
+ * Extracted from styles.css (Section 03 + related media queries)
+ * ===============================================
+ */
+
+.site-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  z-index: 1000;
+}
+
+.header-top {
+  padding: 1rem 0;
+}
+
+.header-top-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.logo-image-wide {
+  height: 60px;
+  width: auto;
+}
+
+.header-right {
+  text-align: left;
+}
+
+/* contact-main-text: Company name line */
+.contact-main-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+  font-style: italic;
+  display: none;
+  line-height: 1;
+}
+
+/* contact-dba-text: now centered and matching company name typography per spec */
+.contact-dba-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+  font-style: italic;
+  display: none;
+  line-height: 1;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.contact-sub-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-maroon);
+  margin-top: 0.25rem;
+}
+
+.header-phone-link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+}
+
+.header-nav-bar {
+  /* Mobile: always positioned absolute, animated via max-height */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #3a5c5c;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.main-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.main-nav-list li {
+  margin: 0;
+}
+
+.main-nav-list a {
+  display: block;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.main-nav-list a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.main-nav-list a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.mobile-menu-toggle-wrapper {
+  display: block;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: end;
+}
+
+.mobile-nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-dark-slate);
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile nav active state (JS toggles .nav-active on body) */
+.nav-active .header-nav-bar {
+  max-height: 600px; /* generous upper bound for transition */
+}
+
+.nav-active .main-nav-list {
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.nav-active .main-nav-list a {
+  padding: 0.75rem 0;
+  width: 100%;
+}
+
+.nav-active .mobile-nav-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-active .mobile-nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-active .mobile-nav-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ---- Dropdown Navigation ---- */
+
+/* Parent list item acts as position anchor */
+.nav-item--has-dropdown {
+  position: relative;
+}
+
+/* The parent clickable link */
+.nav-link--dropdown-parent {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Chevron icon — rotates 180° when dropdown is open or hovered */
+.chevron-wrap {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+/* Rotate to point up when active:
+   - Mobile: only .dropdown-open (JS-driven, no sticky hover issues)
+   - Desktop: hover OR dropdown-open */
+.dropdown-open .chevron {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 992px) {
+  .nav-item--has-dropdown:hover .chevron {
+    transform: rotate(180deg);
+  }
+}
+
+/* Dropdown panel — hidden by default via opacity/visibility (allows transition) */
+.nav-dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+  min-width: 170px;
+  background-color: #2b4a4a;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  z-index: 1001;
+  /* Transition via opacity + visibility + translateY */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 0.65rem 1.1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.nav-dropdown li:last-child a {
+  border-bottom: none;
+}
+
+.nav-dropdown li a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+/* DESKTOP: show dropdown on hover */
+@media (min-width: 992px) {
+  .nav-item--has-dropdown:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* MOBILE: reset dropdown to static/accordion for mobile menu */
+.nav-active .nav-item--has-dropdown .nav-dropdown {
+  position: static;
+  box-shadow: none;
+  border-radius: 0;
+  border-top: none;
+  background-color: transparent;
+  margin-left: 1rem;
+  margin-top: 0.25rem;
+  /* Use max-height for accordion animation on mobile */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: none;
+  transition: max-height 0.3s ease;
+}
+
+.nav-active .nav-item--has-dropdown.dropdown-open .nav-dropdown {
+  max-height: 250px; /* increased for safety */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* On mobile, suppress the desktop :hover reveal to prevent touch-flicker */
+@media (max-width: 991px) {
+  .nav-item--has-dropdown:not(.dropdown-open):hover .nav-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+
+/* ---- Desktop overrides ---- */
+@media (min-width: 992px) {
+  .header-top-grid {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .header-left {
+    grid-column: 1;
+  }
+
+  .header-right {
+    grid-column: 3;
+    text-align: right;
+  }
+
+  .contact-main-text,
+  .contact-dba-text {
+    display: block;
+  }
+
+  .header-nav-bar {
+    /* Reset to normal flow on desktop */
+    position: static;
+    max-height: none;
+    overflow: visible;
+    transition: none;
+    background-color: var(--color-dark-slate);
+  }
+
+  .mobile-menu-toggle-wrapper {
+    display: none;
+  }
+
+  .contact-dba-text {
+    text-align: center;
+  }
+}
