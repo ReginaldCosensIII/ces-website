@@ -165,7 +165,7 @@
 .referral-reward-card svg {
     width: 32px;
     height: 32px;
-    stroke: var(--color-dark-slate);
+    stroke: var(--color-maroon);
     fill: none;
     stroke-width: 1.8;
     stroke-linecap: round;
@@ -248,7 +248,7 @@
     display: block;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-dark-slate);
+    color: var(--color-maroon);
     margin-bottom: 0.3rem;
 }
 
