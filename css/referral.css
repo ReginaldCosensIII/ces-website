@@ -40,7 +40,7 @@
 
 @media (min-width: 992px) {
     .referral-two-col {
-        grid-template-columns: 1.9fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
         gap: 3rem;
     }
 }
@@ -56,13 +56,13 @@
     margin: 0 0 0.5rem 0;
 }
 
-/* Underline accent — maroon for stronger brand presence */
+/* Underline accent — light-green highlight per brand hierarchy */
 .referral-content-col h2::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
-    background-color: var(--color-maroon);
+    background-color: var(--color-light-green);
     margin-top: 0.65rem;
     border-radius: 2px;
 }
@@ -95,18 +95,30 @@
     border-left: 4px solid var(--color-light-green);
 }
 
+/* Step circle base */
 .referral-step-num {
     flex-shrink: 0;
     width: 36px;
     height: 36px;
-    background-color: var(--color-maroon);
-    color: var(--color-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.9rem;
     font-weight: 700;
+}
+
+/* Step 1: dark-slate circle (so user can compare both brand colors) */
+.referral-steps .referral-step:nth-child(1) .referral-step-num {
+    background-color: var(--color-dark-slate);
+    color: var(--color-white);
+}
+
+/* Steps 2 & 3: light-green circle */
+.referral-steps .referral-step:nth-child(2) .referral-step-num,
+.referral-steps .referral-step:nth-child(3) .referral-step-num {
+    background-color: var(--color-light-green);
+    color: var(--color-dark-slate);
 }
 
 .referral-step-body strong {
@@ -139,7 +151,7 @@
     margin-bottom: 2rem;
 }
 
-/* Both reward cards share identical style — no .alt distinction */
+/* Both reward cards share identical style — light-green accent */
 .referral-reward-card {
     background-color: var(--color-white);
     border-radius: 8px;
@@ -200,7 +212,7 @@
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     padding: 2.5rem;
-    border-top: 4px solid var(--color-maroon);
+    border-top: 4px solid var(--color-light-green);
 }
 
 .keap-form-title {
@@ -292,6 +304,11 @@
     border-color: var(--color-dark-slate-light);
 }
 
+/* Hide the reCAPTCHA badge (badge is still active; TOS-compliant note is added in HTML) */
+.grecaptcha-badge {
+    visibility: hidden !important;
+}
+
 
 /* -----------------------------------------------
    5. Thank You Page
@@ -313,14 +330,14 @@
     max-width: 640px;
     width: 100%;
     text-align: center;
-    border-top: 4px solid var(--color-maroon);
+    border-top: 4px solid var(--color-light-green);
 }
 
-/* Checkmark circle — maroon accent */
+/* Checkmark circle — dark-slate (main brand) */
 .thankyou-check {
     width: 72px;
     height: 72px;
-    background-color: var(--color-maroon);
+    background-color: var(--color-dark-slate);
     border-radius: 50%;
     display: flex;
     align-items: center;
