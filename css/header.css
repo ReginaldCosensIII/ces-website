@@ -1,0 +1,289 @@
+/*
+ * ===============================================
+ * HEADER & NAVIGATION STYLES
+ * Extracted from styles.css (Section 03 + related media queries)
+ * ===============================================
+ */
+
+.site-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  z-index: 1000;
+}
+
+.header-top {
+  padding: 1rem 0;
+}
+
+.header-top-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.logo-image-wide {
+  height: 60px;
+  width: auto;
+}
+
+.header-right {
+  text-align: left;
+}
+
+/* contact-main-text: Company name line */
+.contact-main-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+  font-style: italic;
+  display: none;
+  line-height: 1;
+}
+
+/* contact-dba-text: now centered and matching company name typography per spec */
+.contact-dba-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+  font-style: italic;
+  display: none;
+  line-height: 1;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.contact-sub-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-maroon);
+  margin-top: 0.25rem;
+}
+
+.header-phone-link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+}
+
+.header-nav-bar {
+  display: none;
+  background-color: var(--color-dark-slate);
+}
+
+.main-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.main-nav-list li {
+  margin: 0;
+}
+
+.main-nav-list a {
+  display: block;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.main-nav-list a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.main-nav-list a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.mobile-menu-toggle-wrapper {
+  display: block;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: end;
+}
+
+.mobile-nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-dark-slate);
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile nav active state (JS toggles .nav-active on body) */
+.nav-active .header-nav-bar {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #3a5c5c;
+}
+
+.nav-active .main-nav-list {
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.nav-active .main-nav-list a {
+  padding: 0.75rem 0;
+  width: 100%;
+}
+
+.nav-active .mobile-nav-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-active .mobile-nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-active .mobile-nav-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ---- Dropdown Navigation ---- */
+
+/* Parent list item acts as position anchor */
+.nav-item--has-dropdown {
+  position: relative;
+}
+
+/* The parent clickable link — shows an arrow indicator */
+.nav-link--dropdown-parent {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Dropdown panel — hidden by default */
+.nav-dropdown {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 170px;
+  background-color: #2b4a4a;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  z-index: 1001;
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 0.65rem 1.1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background-color 0.2s ease;
+}
+
+.nav-dropdown li:last-child a {
+  border-bottom: none;
+}
+
+.nav-dropdown li a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+/* DESKTOP: show dropdown on hover */
+@media (min-width: 992px) {
+  .nav-item--has-dropdown:hover .nav-dropdown {
+    display: block;
+  }
+}
+
+/* MOBILE: dropdown toggled via .dropdown-open class (JS) */
+.nav-active .nav-item--has-dropdown .nav-dropdown {
+  position: static;
+  box-shadow: none;
+  border-radius: 0;
+  border-top: none;
+  background-color: transparent;
+  border-left: 3px solid rgba(255, 255, 255, 0.25);
+  margin-left: 0.75rem;
+  margin-top: 0.25rem;
+  display: none; /* still hidden until .dropdown-open */
+}
+
+.nav-active .nav-item--has-dropdown.dropdown-open .nav-dropdown {
+  display: block;
+}
+
+/* On mobile, hide the :hover behaviour entirely */
+.nav-active .nav-item--has-dropdown:hover .nav-dropdown {
+  display: none;
+}
+
+.nav-active .nav-item--has-dropdown.dropdown-open .nav-dropdown {
+  display: block;
+}
+
+/* Rotate arrow indicator when open on mobile */
+.nav-active .nav-item--has-dropdown.dropdown-open .nav-link--dropdown-parent {
+  opacity: 0.8;
+}
+
+/* ---- Desktop overrides ---- */
+@media (min-width: 992px) {
+  .header-top-grid {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .header-left {
+    grid-column: 1;
+  }
+
+  .header-right {
+    grid-column: 3;
+    text-align: right;
+  }
+
+  .contact-main-text,
+  .contact-dba-text {
+    display: block;
+  }
+
+  .header-nav-bar {
+    display: block;
+  }
+
+  .mobile-menu-toggle-wrapper {
+    display: none;
+  }
+
+  .contact-dba-text {
+    text-align: center;
+  }
+}
