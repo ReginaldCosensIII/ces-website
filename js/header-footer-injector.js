@@ -139,6 +139,8 @@
         { match: /^\/voip-solutions/,      href: '/voip-solutions.html' },
         { match: /^\/about/,               href: '/about.html' },
         { match: /^\/testimonials/,        href: '/testimonials.html' },
+        { match: /^\/referral-program/,    href: '/about.html' },
+        { match: /^\/referral-thankyou/,   href: '/about.html' },
         { match: /^\/contact-us/,          href: '/contact-us.html' },
         { match: /^\/$|^\/index/,          href: '/index.html' },
         // Service area pages show Home as active (no service-area nav item)
