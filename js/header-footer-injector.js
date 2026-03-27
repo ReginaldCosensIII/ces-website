@@ -69,6 +69,7 @@
                     </a>\
                     <ul class="nav-dropdown">\
                         <li><a href="/about.html">About Us</a></li>\
+                        <li><a href="/referral-program.html">Referral Program</a></li>\
                         <li><a href="/contact-us.html">Contact Us</a></li>\
                     </ul>\
                 </li>\
@@ -138,6 +139,8 @@
         { match: /^\/voip-solutions/,      href: '/voip-solutions.html' },
         { match: /^\/about/,               href: '/about.html' },
         { match: /^\/testimonials/,        href: '/testimonials.html' },
+        { match: /^\/referral-program/,    href: '/referral-program.html' },
+        { match: /^\/referral-thankyou/,   href: '/referral-program.html' },
         { match: /^\/contact-us/,          href: '/contact-us.html' },
         { match: /^\/$|^\/index/,          href: '/index.html' },
         // Service area pages show Home as active (no service-area nav item)
