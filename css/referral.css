@@ -143,6 +143,13 @@
     margin: 0 0 1rem 0;
 }
 
+/* Make the left column sticky since the form on the right is taller */
+.referral-content-col {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+
 .referral-reward-choices {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -201,7 +208,7 @@
 }
 
 .referral-reward-card:hover svg {
-    stroke: var(--color-white) !important;
+    stroke: var(--color-maroon) !important;
     transform: scale(1.15) translateY(-5px);
 }
 
@@ -242,7 +249,7 @@
 }
 
 .referral-reward-card:hover p strong {
-    color: var(--color-white) !important;
+    color: var(--color-maroon) !important;
 }
 
 /* --- Eligibility note --- */
@@ -259,12 +266,6 @@
 /* -----------------------------------------------
    4. Right Column — Keap Form Card
    ----------------------------------------------- */
-.referral-form-col {
-    position: sticky;
-    top: 2rem;   /* keeps form visible while scrolling content on desktop */
-    align-self: start; /* Critical for sticky to work inside CSS Grid */
-}
-
 #keap-form-container {
     background-color: var(--color-white);
     border-radius: 8px;
