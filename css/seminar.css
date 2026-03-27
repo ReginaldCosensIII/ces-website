@@ -19,6 +19,16 @@
     background-color: var(--color-bg-light);
 }
 
+/* Image Hover Mechanics */
+.event-card-img {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.event-card-img:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12) !important; /* Overriding inline shadow */
+}
+
 .seminar-two-col {
     display: grid;
     grid-template-columns: 1fr;
@@ -50,7 +60,7 @@
     display: block;
     width: 60px;
     height: 4px;
-    background-color: var(--color-light-green);
+    background-color: var(--color-maroon);
     margin-top: 0.65rem;
     border-radius: 2px;
 }
@@ -180,7 +190,7 @@
     display: block;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-dark-slate);
+    color: var(--color-maroon);
     margin-bottom: 0.4rem;
 }
 
