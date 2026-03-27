@@ -61,7 +61,7 @@
                 <li><a href="/video-surveillance.html">AI Video Surveillance</a></li>\
                 <li><a href="/voip-solutions.html">VoIP Solutions</a></li>\
                 <li><a href="/testimonials.html">Testimonials</a></li>\
-                <li><a href="/seminar">Seminars</a></li>\
+                <li><a href="/seminar.html">Seminars</a></li>\
                 <li class="nav-item--has-dropdown">\
                     <a href="/about.html" class="nav-link--dropdown-parent">About Us\
                         <span class="chevron-wrap">\
@@ -143,7 +143,7 @@
         { match: /^\/referral-program/,    href: '/referral-program.html' },
         { match: /^\/referral-thankyou/,   href: '/referral-program.html' },
         { match: /^\/contact-us/,          href: '/contact-us.html' },
-        { match: /^\/seminar/,             href: '/seminar' },
+        { match: /^\/seminar/,             href: '/seminar.html' },
         { match: /^\/$|^\/index/,          href: '/index.html' },
         // Service area pages show Home as active (no service-area nav item)
         { match: /^\/service-areas\//,     href: '/index.html' }
