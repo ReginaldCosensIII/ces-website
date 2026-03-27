@@ -1,0 +1,227 @@
+/*
+ * ===============================================
+ * PAGE-SPECIFIC STYLES: Seminar Landing Page
+ * ===============================================
+ * Inherits all global tokens from styles.css:
+ *   --color-dark-slate: #2f4f4f
+ *   --color-dark-slate-light: #4a7c7c
+ *   --color-light-green: #85CCAA
+ *   --color-maroon: #660033
+ *   --color-bg-light: #f8f9fa
+ *   --color-text: #333
+ */
+
+/* -----------------------------------------------
+   1. Two-Column Main Layout Section
+   ----------------------------------------------- */
+.seminar-main-section {
+    padding: 5rem 1rem;
+    background-color: var(--color-bg-light);
+}
+
+/* Image Hover Mechanics */
+.event-card-img {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.event-card-img:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12) !important; /* Overriding inline shadow */
+}
+
+.seminar-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+    .seminar-two-col {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+    }
+}
+
+/* -----------------------------------------------
+   2. Left Column — Event Details
+   ----------------------------------------------- */
+/* Override legacy homepage constraint to stretch the image edge-to-edge */
+.seminar-content-col .seminar-hero-image {
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+    margin: 0 0 2rem 0;
+}
+.seminar-content-col h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-dark-slate);
+    margin: 0 0 0.5rem 0;
+}
+
+/* Underline accent */
+.seminar-content-col h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-maroon);
+    margin-top: 0.65rem;
+    border-radius: 2px;
+}
+
+.seminar-content-col .seminar-lead {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin: 1.5rem 0 2rem 0;
+}
+
+/* Sticky column on desktop */
+@media (min-width: 992px) {
+    .seminar-form-col {
+        position: sticky;
+        top: 2rem;
+        align-self: start;
+    }
+}
+
+.seminar-section-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-dark-slate);
+    margin: 2.5rem 0 1rem 0;
+}
+
+/* --- Seminar Info Steps --- */
+.seminar-steps {
+    list-style: none;
+    margin: 0 0 2.5rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.seminar-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border-left: 4px solid var(--color-light-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seminar-step:hover {
+    transform: translateX(6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.seminar-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: var(--color-dark-slate);
+    color: var(--color-white);
+}
+
+.seminar-step-body strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-dark-slate);
+    margin-bottom: 0.2rem;
+}
+
+.seminar-step-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.55;
+}
+
+/* --- Eligibility note --- */
+.seminar-eligibility {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    border-left: 3px solid var(--color-light-green);
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: var(--color-white);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* -----------------------------------------------
+   3. Right Column — Keap Form Card
+   ----------------------------------------------- */
+#seminar-form-container {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    border-top: 4px solid var(--color-light-green);
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark-slate);
+    margin: 0 0 0.25rem 0;
+}
+
+.form-subtitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-maroon);
+    margin: 0 0 2rem 0;
+}
+
+#seminar-form-container .infusion-field {
+    margin-bottom: 1.25rem;
+}
+
+#seminar-form-container .infusion-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-maroon);
+    margin-bottom: 0.4rem;
+}
+
+#seminar-form-container .infusion-field input[type="text"],
+#seminar-form-container .infusion-field input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #d0d7de;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: #fafafa;
+    font-family: var(--font-family-base);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#seminar-form-container .infusion-field input:focus {
+    outline: none;
+    border-color: var(--color-light-green);
+    box-shadow: 0 0 0 3px rgba(133, 204, 170, 0.2);
+    background-color: var(--color-white);
+}
+
+#seminar-form-container .infusion-submit {
+    margin-top: 2rem;
+}
