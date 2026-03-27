@@ -319,12 +319,31 @@
    5. Thank You Page
    ----------------------------------------------- */
 .referral-thankyou-section {
-    min-height: 70vh;
+    min-height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 5rem 1rem;
     background-color: var(--color-bg-light);
+}
+
+.thankyou-title-area {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.thankyou-title-area h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-dark-slate);
+    margin: 0 0 0.5rem 0;
+}
+
+.thankyou-title-area p {
+    font-size: 1.15rem;
+    color: #555;
+    margin: 0;
 }
 
 .referral-thankyou-card {
