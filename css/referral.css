@@ -462,3 +462,23 @@
 .thankyou-highlight strong {
     color: var(--color-maroon);
 }
+
+/* --- Thank You Page Buttons --- */
+.thankyou-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .thankyou-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .thankyou-buttons .button-primary {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
