@@ -47,6 +47,13 @@
 /* -----------------------------------------------
    2. Left Column — Event Details
    ----------------------------------------------- */
+/* Override legacy homepage constraint to stretch the image edge-to-edge */
+.seminar-content-col .seminar-hero-image {
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+    margin: 0 0 2rem 0;
+}
 .seminar-content-col h2 {
     font-size: 2rem;
     font-weight: bold;
