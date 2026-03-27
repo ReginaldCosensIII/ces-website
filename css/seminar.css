@@ -15,7 +15,7 @@
    1. Two-Column Main Layout Section
    ----------------------------------------------- */
 .seminar-main-section {
-    padding: 5rem 1rem 0; /* Handled bottom margin via banner offset in HTML */
+    padding: 5rem 1rem;
     background-color: var(--color-bg-light);
 }
 
