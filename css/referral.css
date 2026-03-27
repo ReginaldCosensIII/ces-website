@@ -471,34 +471,13 @@
     margin-top: 1.5rem;
 }
 
-.button-secondary {
-    padding: 0.8rem 1.8rem;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    background-color: transparent;
-    color: var(--color-dark-slate);
-    border: 2px solid var(--color-dark-slate);
-    text-decoration: none;
-    display: inline-block;
-}
-
-.button-secondary:hover {
-    background-color: var(--color-dark-slate);
-    color: var(--color-white);
-}
-
 @media (max-width: 600px) {
     .thankyou-buttons {
         flex-direction: column;
         gap: 1rem;
     }
     
-    .thankyou-buttons .button-primary,
-    .thankyou-buttons .button-secondary {
+    .thankyou-buttons .button-primary {
         width: 100%;
         box-sizing: border-box;
     }
