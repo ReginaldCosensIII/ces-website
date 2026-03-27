@@ -20,8 +20,16 @@
     <meta property="og:title" content="Thank You for Your Referral! | CES IT Service">
     <meta property="og:description"
         content="Your referral has been submitted. We'll reach out to your referral soon and reward you once they become a client.">
+    <meta property="og:image" content="https://www.cesitservice.com/images/social/referral-program-meta-data-img.png">
     <meta property="og:url" content="https://www.cesitservice.com/referral-thankyou">
     <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thank You for Your Referral! | CES IT Service">
+    <meta name="twitter:description"
+        content="Your referral has been submitted. We'll reach out to your referral soon and reward you once they become a client.">
+    <meta name="twitter:image" content="https://www.cesitservice.com/images/social/referral-program-meta-data-img.png">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4XTG0R754"></script>
@@ -97,6 +105,69 @@
     <div id="site-footer-root"></div>
 
     <script src="/js/main.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.cesitservice.com/#professionalService",
+          "name": "CES IT Services",
+          "image": "https://www.cesitservice.com/images/ceslogo.png",
+          "url": "https://www.cesitservice.com/",
+          "telephone": "+1-301-620-1580",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1530 Tilco Drive - Unit C",
+            "addressLocality": "Frederick",
+            "addressRegion": "MD",
+            "postalCode": "21704",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.39828834136846",
+            "longitude": "-77.38313313071608"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          },
+          "sameAs": [
+            "https://www.facebook.com/ComputerEnhancementSystems",
+            "https://x.com/cesitservice",
+            "https://www.linkedin.com/company/computer-enhancement-systems"
+          ]
+        },
+        { 
+          "@type": "WebPage", 
+          "url": "https://www.cesitservice.com/referral-thankyou",
+          "name": "Thank You for Your Referral! | CES IT Service",
+          "description": "Thank you for referring a business to CES IT Service. We'll follow up with your referral promptly."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.cesitservice.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Referral Thank You",
+              "item": "https://www.cesitservice.com/referral-thankyou"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
 </body>
 

@@ -20,6 +20,7 @@
     <meta property="og:title" content="Referral Program — Earn $1,000 | CES IT Service">
     <meta property="og:description"
         content="Partner with CES IT Service. Refer a qualifying business and earn $1,000 cash or donate $1,000 to the charity of your choice.">
+    <meta property="og:image" content="https://www.cesitservice.com/images/social/referral-program-meta-data-img.png">
     <meta property="og:url" content="https://www.cesitservice.com/referral-program">
     <meta property="og:type" content="website">
 
@@ -28,6 +29,7 @@
     <meta name="twitter:title" content="Referral Program — Earn $1,000 | CES IT Service">
     <meta name="twitter:description"
         content="Partner with CES IT Service. Refer a qualifying business and earn $1,000 cash or donate $1,000 to the charity of your choice.">
+    <meta name="twitter:image" content="https://www.cesitservice.com/images/social/referral-program-meta-data-img.png">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4XTG0R754"></script>
@@ -307,16 +309,63 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "CES IT Service Referral Program",
-      "description": "Earn $1,000 for every successful business referral to CES IT Service. Choose cash or a charitable donation.",
-      "url": "https://www.cesitservice.com/referral-program",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Computer Enhancement Systems, Inc.",
-        "url": "https://www.cesitservice.com/",
-        "telephone": "+1-301-620-1580"
-      }
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.cesitservice.com/#professionalService",
+          "name": "CES IT Services",
+          "image": "https://www.cesitservice.com/images/ceslogo.png",
+          "url": "https://www.cesitservice.com/",
+          "telephone": "+1-301-620-1580",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1530 Tilco Drive - Unit C",
+            "addressLocality": "Frederick",
+            "addressRegion": "MD",
+            "postalCode": "21704",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.39828834136846",
+            "longitude": "-77.38313313071608"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          },
+          "sameAs": [
+            "https://www.facebook.com/ComputerEnhancementSystems",
+            "https://x.com/cesitservice",
+            "https://www.linkedin.com/company/computer-enhancement-systems"
+          ]
+        },
+        { 
+          "@type": "WebPage", 
+          "url": "https://www.cesitservice.com/referral-program",
+          "name": "CES IT Service Referral Program",
+          "description": "Earn $1,000 for every successful business referral to CES IT Service. Choose cash or a charitable donation."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.cesitservice.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Referral Program",
+              "item": "https://www.cesitservice.com/referral-program"
+            }
+          ]
+        }
+      ]
     }
     </script>
 
