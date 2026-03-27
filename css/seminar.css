@@ -64,7 +64,7 @@
 
 /* Sticky column on desktop */
 @media (min-width: 992px) {
-    .seminar-content-col {
+    .seminar-form-col {
         position: sticky;
         top: 2rem;
         align-self: start;
