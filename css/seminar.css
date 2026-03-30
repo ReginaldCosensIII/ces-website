@@ -95,32 +95,6 @@
     margin: 2.5rem 0 1rem 0;
 }
 
-/* --- Intro Banner (Centered Lead) --- */
-.seminar-intro-banner {
-    max-width: 900px;
-    margin: 0 auto 4rem auto;
-    text-align: center;
-}
-
-.seminar-intro-text {
-    font-size: 1.75rem;
-    line-height: 1.4;
-    color: var(--color-dark-slate);
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Subtle accent line under the centered intro */
-.seminar-intro-text::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: var(--color-light-green);
-    margin: 1.5rem auto 0 auto;
-    border-radius: 2px;
-}
-
 /* --- Seminar Info Steps --- */
 .seminar-steps {
     list-style: none;
