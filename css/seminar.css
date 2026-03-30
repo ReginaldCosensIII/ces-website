@@ -95,6 +95,40 @@
     margin: 2.5rem 0 1rem 0;
 }
 
+/* --- Subtle Advisory Note --- */
+.seminar-advisory-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: var(--color-white);
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid var(--color-maroon);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.seminar-advisory-note-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-maroon);
+    margin-top: 0.15rem;
+}
+
+.seminar-advisory-note-text {
+    margin: 0;
+    color: var(--color-dark-slate);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.seminar-advisory-note-text strong {
+    font-weight: 700;
+    color: var(--color-maroon);
+}
+
 /* --- Seminar Info Steps --- */
 .seminar-steps {
     list-style: none;
