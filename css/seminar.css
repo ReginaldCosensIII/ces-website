@@ -95,6 +95,21 @@
     margin: 2.5rem 0 1rem 0;
 }
 
+/* --- Subtle Lead Typography --- */
+.seminar-plain-lead {
+    margin-bottom: 2rem;
+    padding-left: 1.15rem;
+    border-left: 3px solid var(--color-light-green);
+}
+
+.seminar-plain-lead-text {
+    margin: 0;
+    color: var(--color-dark-slate);
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.65;
+}
+
 /* --- Seminar Info Steps --- */
 .seminar-steps {
     list-style: none;
