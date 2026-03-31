@@ -148,36 +148,36 @@
                         <form id="seminarForm" class="seminar-form">
 
                             <input type="text" id="honeypot" name="honeypot" class="honeypot" autocomplete="off"
-                                style="display:none;" />
+                                aria-hidden="true" tabindex="-1" />
 
                             <div class="form-field">
                                 <label for="firstName">First Name *</label>
-                                <input id="firstName" name="firstName" type="text" required />
+                                <input id="firstName" name="firstName" type="text" autocomplete="given-name" required />
                             </div>
 
                             <div class="form-field">
                                 <label for="lastName">Last Name *</label>
-                                <input id="lastName" name="lastName" type="text" required />
+                                <input id="lastName" name="lastName" type="text" autocomplete="family-name" required />
                             </div>
 
                             <div class="form-field">
                                 <label for="title">Title *</label>
-                                <input id="title" name="title" type="text" required />
+                                <input id="title" name="title" type="text" autocomplete="organization-title" required />
                             </div>
 
                             <div class="form-field">
                                 <label for="company">Company *</label>
-                                <input id="company" name="company" type="text" required />
+                                <input id="company" name="company" type="text" autocomplete="organization" required />
                             </div>
 
                             <div class="form-field">
                                 <label for="email">Email *</label>
-                                <input id="email" name="email" type="email" required />
+                                <input id="email" name="email" type="email" autocomplete="email" required />
                             </div>
 
                             <div class="form-field">
                                 <label for="phone">Phone</label>
-                                <input id="phone" name="phone" type="text" />
+                                <input id="phone" name="phone" type="text" autocomplete="tel" />
                             </div>
 
                             <div class="form-submit">
