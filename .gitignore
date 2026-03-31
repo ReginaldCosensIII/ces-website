@@ -25,6 +25,7 @@ Thumbs.db
 # IDE directories
 .idea/
 .vscode/
+*.code-workspace
 *.sublime-workspace
 *.sublime-project
 

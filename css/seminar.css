@@ -204,11 +204,11 @@
     margin: 0 0 2rem 0;
 }
 
-#seminar-form-container .infusion-field {
+#seminar-form-container .form-field {
     margin-bottom: 1.25rem;
 }
 
-#seminar-form-container .infusion-field label {
+#seminar-form-container .form-field label {
     display: block;
     font-size: 0.85rem;
     font-weight: 600;
@@ -216,8 +216,8 @@
     margin-bottom: 0.4rem;
 }
 
-#seminar-form-container .infusion-field input[type="text"],
-#seminar-form-container .infusion-field input[type="email"] {
+#seminar-form-container .form-field input[type="text"],
+#seminar-form-container .form-field input[type="email"] {
     width: 100%;
     padding: 0.75rem 1rem;
     border: 1.5px solid #d0d7de;
@@ -230,13 +230,13 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-#seminar-form-container .infusion-field input:focus {
+#seminar-form-container .form-field input:focus {
     outline: none;
     border-color: var(--color-light-green);
     box-shadow: 0 0 0 3px rgba(133, 204, 170, 0.2);
     background-color: var(--color-white);
 }
 
-#seminar-form-container .infusion-submit {
+#seminar-form-container .form-submit {
     margin-top: 2rem;
 }
