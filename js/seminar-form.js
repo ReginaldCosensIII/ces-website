@@ -1,15 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const seminarForm = document.getElementById('seminarForm');
+    // Setup dynamic Toast Container
+    let toastContainer = document.getElementById('toast-container');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'toast-container';
+        toastContainer.setAttribute('aria-live', 'polite');
+        document.body.appendChild(toastContainer);
+    }
+
+    function showToast(message, type = 'error') {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerText = message;
+        toastContainer.appendChild(toast);
+        
+        // Trigger reflow & show
+        requestAnimationFrame(() => {
+            toast.classList.add('show');
+        });
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        }, 5000);
+    }
 
     if (seminarForm) {
         seminarForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            const submitBtn = seminarForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+
             // 1. Honeypot check
             const honeypot = document.getElementById('honeypot').value;
             if (honeypot) {
                 console.log('Spam detected via honeypot.');
-                // Simulate delay to mimic processing
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
                 setTimeout(() => {
                     window.location.href = '/seminar-thankyou.html';
                 }, 1000);
@@ -27,22 +55,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 honeypot: honeypot
             };
 
+            // UX: Lock button and show spinner
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+
             // 3. Submit to API
             try {
                 const response = await fetch('/api/seminar/register', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
                 if (response.ok) {
-                    window.location.href = '/seminar-thankyou.html';
+                    showToast('Registration successful! Redirecting...', 'success');
+                    setTimeout(() => window.location.href = '/seminar-thankyou.html', 800);
+                } else if (response.status === 429) {
+                    const limitData = await response.json().catch(() => ({}));
+                    const msg = limitData.detail || 'Too many attempts. Please try again in 10 minutes.';
+                    showToast(msg, 'rate-limit');
                 } else if (response.status === 400) {
                     const errorData = await response.json();
                     
-                    // Clear previous errors
                     document.querySelectorAll('.error-msg').forEach(e => e.remove());
 
                     if (errorData.errors) {
@@ -59,15 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
                                 inputField.parentNode.appendChild(errorDiv);
                             }
                         }
+                    } else if (errorData.detail) {
+                        showToast(errorData.detail, 'error');
                     } else {
-                        alert('There was an error with your registration. Please check your information and try again.');
+                        showToast('There was an error with your registration. Please verify your information.', 'error');
                     }
                 } else {
-                    alert('An unexpected error occurred. Please try again later.');
+                    showToast('An unexpected error occurred. Please try again later.', 'error');
                 }
             } catch (error) {
                 console.error('Network error:', error);
-                alert('We are currently unable to process registrations. Please try again later.');
+                showToast('Could not connect to server. (Check CORS/Network)', 'error');
+            } finally {
+                // Restore button state if not redirecting successfully
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
             }
         });
     }

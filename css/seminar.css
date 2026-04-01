@@ -45,7 +45,7 @@
 }
 
 /* -----------------------------------------------
-   2. Left Column — Event Details
+   2. Left Column â€” Event Details
    ----------------------------------------------- */
 /* Override legacy homepage constraint to stretch the image edge-to-edge */
 .seminar-content-col .seminar-hero-image {
@@ -180,7 +180,7 @@
 }
 
 /* -----------------------------------------------
-   3. Right Column — Keap Form Card
+   3. Right Column â€” Keap Form Card
    ----------------------------------------------- */
 #seminar-form-container {
     background-color: var(--color-white);
@@ -239,4 +239,80 @@
 
 #seminar-form-container .form-submit {
     margin-top: 2rem;
+}
+
+/* -----------------------------------------------
+   6. UI Hardening: Spinners & Notifications
+   ----------------------------------------------- */
+.spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    background-color: var(--color-dark-slate);
+    color: var(--color-white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: auto;
+    max-width: 350px;
+    font-family: var(--font-family-base);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.success {
+    background-color: var(--color-light-green);
+    color: var(--color-dark-slate);
+    border-left: 5px solid #63a685;
+}
+
+.toast.error {
+    background-color: #e74c3c;
+    color: var(--color-white);
+    border-left: 5px solid #c0392b;
+}
+
+.toast.rate-limit {
+    background-color: #f39c12;
+    color: var(--color-white);
+    border-left: 5px solid #d68910;
+}
+
+.honeypot {
+    display: none !important;
+    position: absolute !important;
+    left: -9999px !important;
 }
