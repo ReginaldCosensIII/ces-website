@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     showToast('Registration successful! Redirecting...', 'success');
                     setTimeout(() => window.location.href = '/seminar-thankyou.html', 800);
                 } else if (response.status === 429) {
-                    showToast('Too many attempts. Please try again in 10 minutes.', 'rate-limit');
+                    const limitData = await response.json().catch(() => ({}));
+                    const msg = limitData.detail || 'Too many attempts. Please try again in 10 minutes.';
+                    showToast(msg, 'rate-limit');
                 } else if (response.status === 400) {
                     const errorData = await response.json();
                     
@@ -91,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 inputField.parentNode.appendChild(errorDiv);
                             }
                         }
+                    } else if (errorData.detail) {
+                        showToast(errorData.detail, 'error');
                     } else {
                         showToast('There was an error with your registration. Please verify your information.', 'error');
                     }
@@ -99,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Network error:', error);
-                showToast('We are currently unable to process registrations. Please check your connection.', 'error');
+                showToast('Could not connect to server. (Check CORS/Network)', 'error');
             } finally {
                 // Restore button state if not redirecting successfully
                 submitBtn.disabled = false;
