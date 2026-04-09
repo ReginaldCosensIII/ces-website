@@ -975,7 +975,7 @@ a:hover {
 }
 
 .hero__card {
-  width: min(720px, 92vw);
+  width: min(880px, 92vw);
   color: #0b1220;
   padding: clamp(1.25rem, 1.5vw + 1rem, 2rem);
   border-radius: 18px;
@@ -1154,7 +1154,7 @@ a:hover {
   }
 
   .hero--video .hero__card {
-    width: min(640px, 92vw);
+    width: min(840px, 92vw);
     margin: 0 auto;
     padding: 0;
     background: transparent;
