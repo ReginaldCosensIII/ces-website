@@ -25,7 +25,7 @@
     width: 100%;
     max-height: 290px;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
