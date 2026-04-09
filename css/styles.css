@@ -223,7 +223,8 @@ a:hover {
 .cta-content {
   background-color: var(--color-bg-light);
   color: var(--color-text);
-  padding: 3rem 4rem;
+  /* Mobile-first: reasonable padding that works on small screens */
+  padding: 1.75rem 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -253,7 +254,7 @@ a:hover {
   font-size: 1.8em;
   line-height: 1.25;
   margin: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 }
 
 .cta-bottom-row {
@@ -542,17 +543,20 @@ a:hover {
 }
 
 .who-we-help-grid {
+  /* Fluid grid — self-adapts from 1-col (mobile) to 3-col (desktop) naturally */
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .industry-card {
+  display: flex;
+  flex-direction: column;
   padding: 0; /* Removing internal padding to let image stretch */
   overflow: hidden;
   text-align: center;
-  border-top: 4px solid var(--color-light-green); /* Visual accent match with other cards */
+  /* Top accent removed — cleaner look per design review */
 }
 
 .industry-card-img {
@@ -786,7 +790,9 @@ a:hover {
   .cta-content {
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 3rem 4rem;
     top: -6.5rem;
     margin-bottom: -6.5rem;
     /* To adjust banner width, change this value. */
@@ -834,9 +840,7 @@ a:hover {
     text-align: left;
   }
 
-  .who-we-help-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  /* who-we-help-grid now uses auto-fit — no override needed */
 
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1037,7 +1041,7 @@ a:hover {
   padding: 0.8rem 1.5rem;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   letter-spacing: 0.2px;
   color: #074a33;
   background: rgba(133, 204, 170, 0.20);
