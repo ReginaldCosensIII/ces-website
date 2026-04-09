@@ -234,8 +234,8 @@ a:hover {
   gap: 1.5rem;
   position: relative;
   z-index: 5;
-  top: -9.5rem;
-  margin-bottom: -9.5rem;
+  top: -6rem;
+  margin-bottom: -6rem;
 }
 
 .cta-main-icon {
@@ -257,52 +257,82 @@ a:hover {
   padding-bottom: 0;
 }
 
-/* --- Premium Banner Enhancement (v2 Horizontal) --- */
+/* --- Premium Banner v4 (Horizontal Stack) --- */
 .cta-content.premium-banner {
-  padding: 2rem 3.5rem;
-  text-align: left;
+  padding: 1.5rem 3rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  border-left: none;
+}
+
+.banner-row-top {
+  width: 100%;
+  text-align: center;
+}
+
+.banner-row-bottom {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
-}
-
-.forum-banner-eyebrow {
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-maroon);
-  margin-bottom: 0.2rem;
+  width: 100%;
+  gap: 2rem;
 }
 
 .forum-banner-title {
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--color-dark-slate);
   margin: 0;
-  line-height: 1.1;
-  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.forum-banner-title span {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  color: var(--color-maroon);
+  margin-right: 0.5rem;
 }
 
 .forum-banner-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  font-weight: 700;
-  color: var(--color-maroon);
-  font-size: 1rem;
   min-width: fit-content;
+  color: var(--color-maroon);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .forum-banner-description {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.4;
   color: var(--color-text);
-  max-width: 450px;
+  max-width: 500px;
   margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.banner-zone-action {
+  min-width: fit-content;
+}
+
+@media (max-width: 991px) {
+  .banner-row-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .forum-banner-description {
+    max-width: 100%;
+  }
+
+  .cta-content.premium-banner {
+    padding: 2.5rem 1.5rem;
+    border-top: 6px solid var(--color-maroon);
+  }
 }
 
 @media (max-width: 1100px) {
@@ -1189,8 +1219,8 @@ a:hover {
   .hero--video>.stat-badge {
     font-size: 1.35rem;
     padding: 0.6rem 1.1rem;
-    /* Controls the space BELOW the stat badge. Pulling higher to clear the new banner height. */
-    bottom: 11rem;
+    /* Controls the space BELOW the stat badge. Reverted to stable baseline. */
+    bottom: 5rem;
   }
 }
 
