@@ -1110,8 +1110,8 @@ a:hover {
 
   /* Desktop-specific adjustments for the stat badge */
   .hero--video>.stat-badge {
-    /* Adjusts the size of the badge on larger screens */
-    font-size: 1.1rem;
+    /* Temporarily set very large to confirm this rule is what controls the badge size */
+    font-size: 2.4rem;
     padding: 0.6rem 1.1rem;
     /* Controls the space BELOW the stat badge. A smaller value moves it down. */
     bottom: 5rem;
