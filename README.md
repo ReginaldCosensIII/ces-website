@@ -42,10 +42,10 @@ The site utilizes a **component-based injection strategy** to centralize shared 
 
 ## 🛠️ Maintenance & Content Updates
 
-### Updating Seminar Dates
-When updating the **AI & Cybersecurity Lunch and Learn Seminar** date:
-1. Update `index.html` (Hero and Seminar sections).
-2. Update `ai-seminar-registration.html` (Header and form text).
+### Updating CEO AI Forum Dates
+When updating the **CEO AI Forum** date:
+1. Update `index.html` (Hero and Forum sections).
+2. Update `ceo-ai-forum.html` (Header and form text).
 3. Update the global `header.html` or `footer.html` if the event is featured in the navigation or sidebar.
 
 ### Deployment Guidelines
