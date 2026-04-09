@@ -217,7 +217,7 @@ a:hover {
   background-color: #262626;
   color: var(--color-white);
   text-align: center;
-  padding: 1rem 0 4rem 0;
+  padding: 2rem 0 4rem 0;
 }
 
 .cta-content {
@@ -274,7 +274,7 @@ a:hover {
 }
 
 .cta-button-wrapper {
-  padding-bottom: 0.75rem;
+  padding-bottom: 0;
 }
 
 .questions-list-area {
