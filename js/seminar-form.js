@@ -25,11 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    if (seminarForm) {
-        seminarForm.addEventListener('submit', async (e) => {
+    const forumForm = document.getElementById('forumForm');
+
+    if (forumForm) {
+        forumForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const submitBtn = seminarForm.querySelector('button[type="submit"]');
+            const submitBtn = forumForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
 
             // 1. Honeypot check
