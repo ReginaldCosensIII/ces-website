@@ -257,60 +257,66 @@ a:hover {
   padding-bottom: 0;
 }
 
-/* --- Premium Banner Enhancement --- */
+/* --- Premium Banner Enhancement (v2 Horizontal) --- */
 .cta-content.premium-banner {
-  padding: 3rem 4rem;
+  padding: 2rem 3.5rem;
   text-align: left;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
   border-left: 6px solid var(--color-maroon);
 }
 
 .forum-banner-eyebrow {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   color: var(--color-maroon);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .forum-banner-title {
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: var(--color-dark-slate);
-  margin: 0 0 0.25rem 0;
-  line-height: 1.1;
-}
-
-.forum-banner-subtitle {
-  font-size: 1.25rem;
+  font-size: 2.1rem;
   font-weight: 600;
-  color: var(--color-dark-slate-light);
-  margin-bottom: 1.25rem;
-  display: block;
+  color: var(--color-dark-slate);
+  margin: 0;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .forum-banner-details {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 0.25rem;
   font-weight: 700;
   color: var(--color-maroon);
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  min-width: fit-content;
 }
 
 .forum-banner-description {
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.4;
   color: var(--color-text);
-  max-width: 650px;
+  max-width: 450px;
   margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .cta-content.premium-banner {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 991px) {
   .cta-content.premium-banner {
     padding: 2.5rem 1.5rem;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     border-left: none;
@@ -318,13 +324,14 @@ a:hover {
   }
 
   .forum-banner-title {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
+    white-space: normal;
   }
 
   .forum-banner-details {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
   }
 }
 
