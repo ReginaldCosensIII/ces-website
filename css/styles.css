@@ -393,7 +393,7 @@ a:hover {
 
 .featured-quote-section-modern {
   padding: 4rem 0 6rem;
-  background-color: white;
+  background-color: var(--color-bg-light);
 }
 
 .quote-layout-grid {
