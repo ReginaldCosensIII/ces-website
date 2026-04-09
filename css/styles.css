@@ -234,8 +234,8 @@ a:hover {
   gap: 1.5rem;
   position: relative;
   z-index: 5;
-  top: -6rem;
-  margin-bottom: -6rem;
+  top: -9.5rem;
+  margin-bottom: -9.5rem;
 }
 
 .cta-main-icon {
@@ -266,7 +266,6 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  border-left: 6px solid var(--color-maroon);
 }
 
 .forum-banner-eyebrow {
@@ -319,7 +318,6 @@ a:hover {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    border-left: none;
     border-top: 6px solid var(--color-maroon);
   }
 
@@ -1191,8 +1189,8 @@ a:hover {
   .hero--video>.stat-badge {
     font-size: 1.35rem;
     padding: 0.6rem 1.1rem;
-    /* Controls the space BELOW the stat badge. A smaller value moves it down. */
-    bottom: 5rem;
+    /* Controls the space BELOW the stat badge. Pulling higher to clear the new banner height. */
+    bottom: 11rem;
   }
 }
 
