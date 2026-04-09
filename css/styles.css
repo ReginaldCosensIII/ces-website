@@ -257,6 +257,78 @@ a:hover {
   padding-bottom: 0;
 }
 
+/* --- Premium Banner Enhancement --- */
+.cta-content.premium-banner {
+  padding: 3rem 4rem;
+  text-align: left;
+  align-items: flex-start;
+  border-left: 6px solid var(--color-maroon);
+}
+
+.forum-banner-eyebrow {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-maroon);
+  margin-bottom: 0.5rem;
+}
+
+.forum-banner-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-dark-slate);
+  margin: 0 0 0.25rem 0;
+  line-height: 1.1;
+}
+
+.forum-banner-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark-slate-light);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.forum-banner-details {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.forum-banner-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  max-width: 650px;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .cta-content.premium-banner {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    align-items: center;
+    border-left: none;
+    border-top: 6px solid var(--color-maroon);
+  }
+
+  .forum-banner-title {
+    font-size: 1.8rem;
+  }
+
+  .forum-banner-details {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+
 .cta-bottom-row {
   display: flex;
   flex-direction: column;
