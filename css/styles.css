@@ -302,16 +302,22 @@ a:hover {
   color: var(--color-maroon);
   font-weight: 700;
   font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .forum-banner-description {
   font-size: 0.95rem;
   line-height: 1.4;
   color: var(--color-text);
-  max-width: 500px;
+  max-width: 650px;
   margin: 0;
+  text-align: left;
+}
+
+.banner-zone-text-stack {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  text-align: center;
 }
 
 .banner-zone-action {
