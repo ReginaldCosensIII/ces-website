@@ -275,9 +275,9 @@ a:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .forum-banner-title {
