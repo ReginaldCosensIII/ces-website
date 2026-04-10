@@ -275,9 +275,9 @@ a:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .forum-banner-title {
@@ -294,7 +294,7 @@ a:hover {
   text-transform: uppercase;
   font-size: 0.75em;
   letter-spacing: 0.05em;
-  color: var(--color-maroon);
+  color: inherit;
   margin-right: 0;
   margin-bottom: 0.25rem;
 }
