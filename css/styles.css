@@ -257,9 +257,9 @@ a:hover {
   padding-bottom: 0;
 }
 
-/* --- Premium Banner v4 (Horizontal Stack) --- */
+/* --- Premium Banner v6 (Centered Visibility) --- */
 .cta-content.premium-banner {
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem 1.75rem;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
@@ -289,27 +289,29 @@ a:hover {
 }
 
 .forum-banner-title span {
+  display: block;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 0.75em;
   letter-spacing: 0.05em;
   color: var(--color-maroon);
-  margin-right: 0.5rem;
+  margin-right: 0;
+  margin-bottom: 0.25rem;
 }
 
 .forum-banner-details {
   min-width: fit-content;
   color: var(--color-maroon);
   font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  margin-bottom: 0;
 }
 
 .forum-banner-description {
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.45;
   color: var(--color-text);
-  max-width: 650px;
+  max-width: 420px;
   margin: 0;
   text-align: left;
 }
