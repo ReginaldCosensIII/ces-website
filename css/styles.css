@@ -264,8 +264,11 @@ a:hover {
   align-items: center;
   gap: 1.25rem;
   border-left: none;
-  max-width: 950px;
-  margin: 0 auto;
+  width: 92%;
+  max-width: 1250px;
+  /* Use explicit left/right margins to prevent resetting margin-bottom: -6.5rem */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .banner-row-top {
