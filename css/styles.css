@@ -346,8 +346,12 @@ a:hover {
   .banner-row-bottom {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     text-align: center;
+  }
+
+  .banner-row-spacer {
+    display: none;
   }
 
   .forum-banner-description {
@@ -372,6 +376,7 @@ a:hover {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    gap: 1.5rem;
   }
 
   .forum-banner-title {
