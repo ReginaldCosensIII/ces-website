@@ -1067,7 +1067,7 @@ a:hover {
 
 .hero {
   position: relative;
-  min-height: 66vh;
+  min-height: clamp(600px, 68vh, 1000px);
   display: flex;
   align-items: flex-end;
   padding-bottom: 8rem;
@@ -1204,7 +1204,7 @@ a:hover {
 @media (min-width: 769px) and (max-width: 991px) {
   .hero--video .hero__card {
     /* This static value prevents the layout from breaking at this specific size range */
-    margin-bottom: 8rem;
+    margin-bottom: clamp(6rem, 8vh, 10rem);
   }
 
   /* ADDED TO FIX OVERLAP ON SHORT SCREENS */
@@ -1267,7 +1267,7 @@ a:hover {
   }
 
   .hero--video {
-    min-height: 68vh;
+    min-height: clamp(680px, 75vh, 1000px);
     padding-bottom: 0;
     align-items: center;
   }
