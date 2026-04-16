@@ -145,3 +145,8 @@
     text-align: left;
     margin-top: 0;
 }
+
+/* Tombstone clearance for floating CTA */
+.tombstone-clearance-wrap {
+    padding-top: 8rem; 
+}
