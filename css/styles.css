@@ -217,14 +217,15 @@ a:hover {
   background-color: #262626;
   color: var(--color-white);
   text-align: center;
-  padding: 1rem 0 4rem 0;
+  padding: 2rem 0 4rem 0;
 }
 
 .cta-content {
   background-color: var(--color-bg-light);
   color: var(--color-text);
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  /* Mobile-first: reasonable padding that works on small screens */
+  padding: 1.75rem 1.5rem;
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -253,8 +254,143 @@ a:hover {
   font-size: 1.8em;
   line-height: 1.25;
   margin: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 }
+
+/* --- Premium Banner v10 (Desktop Elegance) --- */
+.cta-content.premium-banner {
+  padding: 1rem 3rem 1.75rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  border-left: none;
+  width: 92%;
+  max-width: 1250px;
+  /* Use explicit left/right margins to prevent resetting margin-bottom: -6.5rem */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-row-top {
+  width: 100%;
+  text-align: center;
+}
+
+.banner-row-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.banner-row-spacer {
+  content: "";
+}
+
+.forum-banner-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-dark-slate);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.forum-banner-title span {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  color: inherit;
+  margin-right: 0;
+  margin-bottom: 0.25rem;
+}
+
+.forum-banner-details {
+  min-width: fit-content;
+  color: var(--color-maroon);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.forum-banner-description {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--color-text);
+  max-width: 420px;
+  margin: 0;
+  text-align: center;
+}
+
+.banner-zone-info-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-zone-text-stack {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.banner-zone-action {
+  min-width: fit-content;
+  justify-self: end;
+}
+
+@media (max-width: 991px) {
+  .banner-row-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .banner-row-spacer {
+    display: none;
+  }
+
+  .forum-banner-description {
+    max-width: 100%;
+  }
+
+  .cta-content.premium-banner {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cta-content.premium-banner {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .cta-content.premium-banner {
+    padding: 2.5rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .forum-banner-title {
+    font-size: 1.85rem;
+    white-space: normal;
+  }
+
+  .forum-banner-details {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
 
 .cta-bottom-row {
   display: flex;
@@ -273,7 +409,7 @@ a:hover {
 }
 
 .cta-button-wrapper {
-  padding-bottom: 0.75rem;
+  padding-bottom: 0;
 }
 
 .questions-list-area {
@@ -392,7 +528,7 @@ a:hover {
 
 .featured-quote-section-modern {
   padding: 4rem 0 6rem;
-  background-color: white;
+  background-color: var(--color-bg-light);
 }
 
 .quote-layout-grid {
@@ -531,6 +667,54 @@ a:hover {
   color: var(--color-dark-slate);
   display: inline-block;
   text-align: left;
+}
+
+
+/* ========== 08b) WHO WE HELP ========== */
+
+.who-we-help {
+  padding: 4rem 0 6rem;
+  background-color: var(--color-white);
+}
+
+.who-we-help-grid {
+  /* Fluid grid — self-adapts from 1-col (mobile) to 3-col (desktop) naturally */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.industry-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0; /* Removing internal padding to let image stretch */
+  overflow: hidden;
+  text-align: center;
+  /* Top accent removed — cleaner look per design review */
+}
+
+.industry-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.industry-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.industry-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dark-slate);
+  margin: 0;
+  line-height: 1.4;
 }
 
 
@@ -741,7 +925,9 @@ a:hover {
   .cta-content {
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 3rem 4rem;
     top: -6.5rem;
     margin-bottom: -6.5rem;
     /* To adjust banner width, change this value. */
@@ -788,6 +974,8 @@ a:hover {
   .quote-intro {
     text-align: left;
   }
+
+  /* who-we-help-grid now uses auto-fit — no override needed */
 
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -884,7 +1072,7 @@ a:hover {
 
 .hero {
   position: relative;
-  min-height: 66vh;
+  min-height: clamp(600px, 68vh, 1000px);
   display: flex;
   align-items: flex-end;
   padding-bottom: 8rem;
@@ -926,7 +1114,7 @@ a:hover {
 }
 
 .hero__card {
-  width: min(720px, 92vw);
+  width: min(700px, 92vw);
   color: #0b1220;
   padding: clamp(1.25rem, 1.5vw + 1rem, 2rem);
   border-radius: 18px;
@@ -984,21 +1172,22 @@ a:hover {
 .stat-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.45rem 0.75rem;
+  gap: 0.75rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.75rem;
   letter-spacing: 0.2px;
   color: #074a33;
   background: rgba(133, 204, 170, 0.20);
   border: 1px solid rgba(133, 204, 170, 0.45);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 6px 18px rgba(0, 0, 0, 0.10);
+  white-space: nowrap;
 }
 
 .stat-badge__icon {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: currentColor;
   opacity: 0.9;
 }
@@ -1020,7 +1209,7 @@ a:hover {
 @media (min-width: 769px) and (max-width: 991px) {
   .hero--video .hero__card {
     /* This static value prevents the layout from breaking at this specific size range */
-    margin-bottom: 8rem;
+    margin-bottom: clamp(6rem, 8vh, 10rem);
   }
 
   /* ADDED TO FIX OVERLAP ON SHORT SCREENS */
@@ -1057,10 +1246,9 @@ a:hover {
 
   /* Desktop-specific adjustments for the stat badge */
   .hero--video>.stat-badge {
-    /* Adjusts the size of the badge on larger screens */
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
     padding: 0.6rem 1.1rem;
-    /* Controls the space BELOW the stat badge. A smaller value moves it down. */
+    /* Controls the space BELOW the stat badge. Reverted to stable baseline. */
     bottom: 5rem;
   }
 }
@@ -1084,7 +1272,7 @@ a:hover {
   }
 
   .hero--video {
-    min-height: 68vh;
+    min-height: clamp(680px, 75vh, 1000px);
     padding-bottom: 0;
     align-items: center;
   }
@@ -1105,7 +1293,7 @@ a:hover {
   }
 
   .hero--video .hero__card {
-    width: min(640px, 92vw);
+    width: min(840px, 92vw);
     margin: 0 auto;
     padding: 0;
     background: transparent;
@@ -1149,8 +1337,7 @@ a:hover {
     bottom: 6rem;
     white-space: nowrap;
     max-width: 94vw;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: clamp(0.75rem, 3.2vw, 1.15rem);
   }
 
   .hero--video .hero__headline,

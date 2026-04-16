@@ -25,11 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    if (seminarForm) {
-        seminarForm.addEventListener('submit', async (e) => {
+    const forumForm = document.getElementById('forumForm');
+
+    if (forumForm) {
+        forumForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const submitBtn = seminarForm.querySelector('button[type="submit"]');
+            const submitBtn = forumForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
 
             // 1. Honeypot check
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
                 setTimeout(() => {
-                    window.location.href = '/seminar-thankyou.html';
+                    window.location.href = '/ceo-ai-forum-thankyou.html';
                 }, 1000);
                 return;
             }
@@ -61,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 3. Submit to API
             try {
-                const response = await fetch('/api/seminar/register', {
+                const response = await fetch('/api/ceo-ai-forum/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -69,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     showToast('Registration successful! Redirecting...', 'success');
-                    setTimeout(() => window.location.href = '/seminar-thankyou.html', 800);
+                    setTimeout(() => window.location.href = '/ceo-ai-forum-thankyou.html', 800);
                 } else if (response.status === 429) {
                     const limitData = await response.json().catch(() => ({}));
                     const msg = limitData.detail || 'Too many attempts. Please try again in 10 minutes.';
