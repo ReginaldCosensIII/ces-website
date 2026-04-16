@@ -70,6 +70,7 @@
                     </a>\
                     <ul class="nav-dropdown">\
                         <li><a href="/about.html">About Us</a></li>\
+                        <li><a href="/how-ces-is-different.html">How CES is Different</a></li>\
                         <li><a href="/referral-program.html">Referral Program</a></li>\
                         <li><a href="/contact-us.html">Contact Us</a></li>\
                     </ul>\
