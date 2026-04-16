@@ -131,22 +131,4 @@
     color: #a0a0a0;
 }
 
-/* Tombstone overrides to fit larger text content naturally */
-.tombstone.custom-tombstone {
-    height: auto;
-    min-height: 260px;
-    padding: 2rem 1.5rem;
-    justify-content: flex-start;
-}
 
-.tombstone.custom-tombstone p {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    text-align: left;
-    margin-top: 0;
-}
-
-/* Tombstone clearance for floating CTA */
-.tombstone-clearance-wrap {
-    padding-top: 8rem; 
-}
