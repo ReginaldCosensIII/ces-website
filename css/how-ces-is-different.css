@@ -1,0 +1,188 @@
+/* Intro Section Styles */
+.intro-section {
+    padding: 6rem 0 4rem;
+    background-color: var(--color-white);
+}
+
+.intro-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .intro-grid {
+        flex-direction: row;
+    }
+    .intro-text, .intro-image {
+        flex: 1;
+    }
+}
+
+.intro-text p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-dark-slate);
+    margin: 0;
+}
+
+/* Background element */
+.rounded-image-asset {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* CES Advantage Comparison Section */
+.ces-advantage-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-light, #f4f6f8);
+}
+
+.comparison-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.comparison-row-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .comparison-row-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Card Modifiers */
+.card-heading-with-icon {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.card--ces-advantage {
+    border-left: 6px solid var(--color-light-green, #8cc63f);
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.card--ces-advantage:hover {
+    transform: translateX(12px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.1);
+}
+
+.card--ces-advantage h3 {
+    color: var(--color-dark-slate, #2f4f4f);
+}
+
+.card--msp {
+    background-color: #fcfcfc;
+    color: #7b838a;
+    border: 1px solid #e9ecef;
+    padding: 2.5rem;
+    box-shadow: none !important;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+}
+
+.card--msp h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: inherit;
+}
+
+.card--msp:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    color: #333;
+    opacity: 1;
+}
+
+/* SVG Placeholders */
+.ces-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 12px;
+    margin-top: 2px;
+    vertical-align: middle;
+    color: var(--color-light-green, #8cc63f);
+}
+
+.msp-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 12px;
+    margin-top: 2px;
+    vertical-align: middle;
+    color: #a0a0a0;
+}
+
+/* Ensure standard heading typography matches about.css */
+.intro-text h2,
+.unified-strategy-section h2 {
+    color: var(--color-dark-slate);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Image Zoom Wrapper */
+.image-zoom-wrapper {
+    overflow: hidden;
+    border-radius: 8px; /* Match existing radius */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.image-zoom-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+.image-zoom-wrapper:hover {
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+.image-zoom-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Interactive SVG Hover States */
+.ces-icon {
+    transition: transform 0.3s ease;
+}
+.card--ces-advantage:hover .ces-icon {
+    transform: scale(1.2);
+}
+
+.msp-icon {
+    transition: all 0.3s ease;
+}
+.card--msp:hover .msp-icon { 
+    transform: scale(1.1); 
+    color: var(--color-maroon); 
+}
+.card--msp:hover .msp-icon path,
+.card--msp:hover .msp-icon circle,
+.card--msp:hover .msp-icon line,
+.card--msp:hover .msp-icon polyline {
+    stroke: var(--color-maroon); 
+}
+
+

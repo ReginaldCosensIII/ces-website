@@ -70,6 +70,7 @@
                     </a>\
                     <ul class="nav-dropdown">\
                         <li><a href="/about.html">About Us</a></li>\
+                        <li><a href="/how-ces-is-different.html">How CES is Different</a></li>\
                         <li><a href="/referral-program.html">Referral Program</a></li>\
                         <li><a href="/contact-us.html">Contact Us</a></li>\
                     </ul>\
@@ -140,6 +141,7 @@
         { match: /^\/voip-solutions/,      href: '/voip-solutions.html' },
         { match: /^\/about/,               href: '/about.html' },
         { match: /^\/testimonials/,        href: '/testimonials.html' },
+        { match: /^\/how-ces-is-different/,href: '/how-ces-is-different.html' },
         { match: /^\/referral-program/,    href: '/referral-program.html' },
         { match: /^\/referral-thankyou/,   href: '/referral-program.html' },
         { match: /^\/contact-us/,          href: '/contact-us.html' },
@@ -226,6 +228,13 @@
             var linkPath = link.getAttribute('href');
             if (linkPath === activeHref) {
                 link.classList.add('active');
+                
+                // Ensure parent dropdown link also receives active status
+                var dropdownParent = link.closest('.nav-item--has-dropdown');
+                if (dropdownParent) {
+                    var parentLink = dropdownParent.querySelector('.nav-link--dropdown-parent');
+                    if (parentLink) parentLink.classList.add('active');
+                }
             }
         });
     }
