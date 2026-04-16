@@ -131,4 +131,43 @@
     color: #a0a0a0;
 }
 
+/* Ensure standard heading typography matches about.css */
+.intro-text h2,
+.unified-strategy-section h2 {
+    color: var(--color-dark-slate);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Image Zoom Wrapper */
+.image-zoom-wrapper {
+    overflow: hidden;
+    border-radius: 8px; /* Match existing radius */
+}
+.image-zoom-wrapper img {
+    transition: transform 0.5s ease;
+    display: block;
+}
+.image-zoom-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Interactive SVG Hover States */
+.ces-icon {
+    transition: transform 0.3s ease;
+}
+.card--ces-advantage:hover .ces-icon {
+    transform: scale(1.2);
+}
+
+.msp-icon {
+    transition: all 0.3s ease;
+}
+.card--msp:hover .msp-icon { 
+    transform: scale(1.2); 
+    fill: var(--color-maroon); 
+    color: var(--color-maroon); 
+}
+
 
