@@ -31,7 +31,6 @@
 .rounded-image-asset {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* CES Advantage Comparison Section */
@@ -145,6 +144,8 @@
 .image-zoom-wrapper {
     overflow: hidden;
     border-radius: 8px; /* Match existing radius */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .image-zoom-wrapper img {
     width: 100%;
@@ -152,6 +153,9 @@
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
+}
+.image-zoom-wrapper:hover {
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
 }
 .image-zoom-wrapper:hover img {
     transform: scale(1.05);
