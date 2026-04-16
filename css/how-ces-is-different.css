@@ -1,6 +1,7 @@
 /* Intro Section Styles */
 .intro-section {
     padding: 6rem 0 4rem;
+    background-color: var(--color-white);
 }
 
 .intro-grid {
@@ -165,9 +166,14 @@
     transition: all 0.3s ease;
 }
 .card--msp:hover .msp-icon { 
-    transform: scale(1.2); 
-    fill: var(--color-maroon); 
+    transform: scale(1.1); 
     color: var(--color-maroon); 
+}
+.card--msp:hover .msp-icon path,
+.card--msp:hover .msp-icon circle,
+.card--msp:hover .msp-icon line,
+.card--msp:hover .msp-icon polyline {
+    stroke: var(--color-maroon); 
 }
 
 
