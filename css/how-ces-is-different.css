@@ -87,12 +87,10 @@
 
 .card--msp {
     background-color: #fcfcfc;
-    color: #7b838a;
+    color: #333;
     border: 1px solid #e9ecef;
     padding: 2.5rem;
     box-shadow: none !important;
-    transition: color 0.3s ease, opacity 0.3s ease;
-    opacity: 0.85;
     display: flex;
     align-items: center;
 }
@@ -106,8 +104,6 @@
 .card--msp:hover {
     transform: none !important;
     box-shadow: none !important;
-    color: #333;
-    opacity: 1;
 }
 
 /* SVG Placeholders */
