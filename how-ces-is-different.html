@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" href="/images/favicon.ico">
     
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/supporting-styles.css">
     <link rel="stylesheet" href="/css/how-ces-is-different.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -24,10 +25,13 @@
     <div id="site-header-root"></div>
 
     <main>
-        <!-- Internal Hero Section -->
-        <section class="how-ces-is-different-hero">
+        <!-- Standardized Page Hero -->
+        <section class="page-hero">
             <div class="container">
-                <h1>How CES is Different</h1>
+                <div class="page-hero-content">
+                    <h1>How CES is Different</h1>
+                    <p class="page-hero-subheading">CES delivers speed, accountability, and strategic execution—backed by decades of experience and a model built for organizations that cannot afford delays, risk, or uncertainty.</p>
+                </div>
             </div>
         </section>
 
@@ -36,10 +40,10 @@
             <div class="container">
                 <div class="intro-grid">
                     <div class="intro-text">
-                        <p>Most managed service providers look similar on the surface. The way they operate is very different from CES IT Service. The typical MSP model relies on ticket queues, delayed responses, and layered support teams... CES was built to eliminate that experience entirely.</p>
+                        <p>Most managed service providers look similar on the surface. The way they operate is very different from CES IT Service. The typical MSP model relies on ticket queues, delayed responses, and layered support teams. When an issue occurs, clients are often routed through systems, waiting for callbacks, escalations, and availability. CES was built to eliminate that experience entirely.</p>
                     </div>
                     <div class="intro-image">
-                        <img src="https://placehold.co/800x600/2f4f4f/ffffff?text=Strategic+Partnership" alt="Placeholder" class="rounded-image-asset" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.08);" />
+                        <img src="https://placehold.co/800x600/2f4f4f/ffffff?text=Strategic+Partnership" alt="Placeholder" class="rounded-image-asset" />
                     </div>
                 </div>
             </div>
@@ -48,46 +52,70 @@
         <!-- The Comparison Grid -->
         <section class="ces-advantage-section">
             <div class="container">
-                <h2 class="section-heading text-center">The CES Advantage</h2>
+                <h2 class="section-heading text-center" style="font-style: italic; color: var(--color-dark-slate); margin-bottom: 3rem;">The CES Advantage</h2>
                 
                 <div class="comparison-grid">
                     <!-- Row 1 -->
                     <div class="comparison-row-cards">
                         <div class="card card--ces-advantage">
-                            <h3>CES Response Time: 2–5 minutes</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="ces-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>CES Response Time: 2–5 minutes, with a live answer.</span>
+                            </h3>
                         </div>
                         <div class="card card--msp">
-                            <h3>Typical MSP: 15–60+ minutes</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="msp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>Typical MSP Response Time: 15–60+ minutes, often starting with voicemail or ticket submission.</span>
+                            </h3>
                         </div>
                     </div>
                     
                     <!-- Row 2 -->
                     <div class="comparison-row-cards">
                         <div class="card card--ces-advantage">
-                            <h3>CES Support Model: Immediate engineer assignment</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="ces-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>CES Support Model: Assign the proper level of engineer to the call immediately. No escalation of service calls resulting your team’s issue resolved quickly. Average resolution time 20 minutes.</span>
+                            </h3>
                         </div>
                         <div class="card card--msp">
-                            <h3>Typical MSP: Tiered queues</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="msp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>Typical MSP Model: Tiered queues, handoffs, and delayed resolution two hours or more.</span>
+                            </h3>
                         </div>
                     </div>
                     
                     <!-- Row 3 -->
                     <div class="comparison-row-cards">
                         <div class="card card--ces-advantage">
-                            <h3>CES Track Record: 30+ years, 190k tickets</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="ces-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>CES Track Record: 30+ years in business and over 190,000 support tickets successfully completed.</span>
+                            </h3>
                         </div>
                         <div class="card card--msp">
-                            <h3>Typical MSP: Inconsistent delivery</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="msp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>Typical MSP Experience: Less tenure, higher turnover, and inconsistent delivery.</span>
+                            </h3>
                         </div>
                     </div>
                     
                     <!-- Row 4 -->
                     <div class="comparison-row-cards">
                         <div class="card card--ces-advantage">
-                            <h3>CES Team Stability: 10+ years tenure</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="ces-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>CES Team Stability: Engineers average 10+ years with our company.</span>
+                            </h3>
                         </div>
                         <div class="card card--msp">
-                            <h3>Typical MSP: Frequent turnover</h3>
+                            <h3 class="card-heading-with-icon">
+                                <svg class="msp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>Typical MSP Staffing: Frequent turnover and less familiarity with client environments.</span>
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -95,14 +123,38 @@
         </section>
 
         <!-- Unified Strategy Section -->
-        <section class="unified-strategy-section">
-            <div class="container text-center">
-                <h2>Unified Strategy, Compliance, and AI Security</h2>
-                <ul class="compliance-list">
-                    <li>HIPAA</li>
-                    <li>CMMC</li>
-                </ul>
+        <section class="unified-strategy-section text-center" style="padding: 6rem 1rem;">
+            <div class="container" style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.15rem; line-height: 1.8; color: #495057; margin-bottom: 2rem;">Beyond responsiveness, CES operates at a different level strategically. While most MSPs focus on basic IT maintenance, we focus on reducing risk, improving performance, and supporting long-term growth. CES works extensively within regulated industries and align our services with standards such as HIPAA, PCI-DSS, FTC Safeguards, and CMMC. This ensures our clients are not only operational, but protected from compliance exposure and insurance risk—something many providers only address at a surface level. Most providers also treat services as separate offerings. CES integrates them into a unified strategy: Cybersecurity, infrastructure, and compliance working together. AI implemented with structure, security, and ROI in mind—not as a trend. Physical and digital security aligned under one partner.</p>
                 <img src="https://placehold.co/1200x500/2f4f4f/85CCAA?text=Compliance+and+AI+Security" alt="Placeholder" style="width: 100%; border-radius: 8px; margin-top: 2rem; box-shadow: 0 12px 30px rgba(0,0,0,0.05);" />
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="page-cta-section">
+            <div class="container">
+                <h2 class="page-cta-headline">Ready to experience the CES difference?</h2>
+                <div class="page-cta-bottom-row">
+                    <div class="page-cta-supporting-text">
+                        <p>We're ready to show you how a truly strategic IT partner can completely eliminate delays and uncertainty for your business.</p>
+                    </div>
+                    <a href="/contact-us.html" class="button-primary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Banner (Tombstones structure reused from supporting-styles) -->
+        <section class="final-banner">
+            <div class="tombstone-container">
+                <div class="tombstone custom-tombstone">
+                    <p>Our service model goes further than remote support. We provide on-site service when needed, in-house cybersecurity training to strengthen employee awareness, AI marketing assistance to support business growth, and proprietary...</p>
+                </div>
+                <div class="tombstone custom-tombstone">
+                    <p>...client-specific video training to ensure teams can operate efficiently and consistently. In short, most MSPs provide IT support.</p>
+                </div>
+                <div class="tombstone custom-tombstone">
+                    <p>CES delivers speed, accountability, and strategic execution—backed by decades of experience and a model built for organizations that cannot afford delays, risk, or uncertainty.</p>
+                </div>
             </div>
         </section>
 
