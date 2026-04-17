@@ -87,12 +87,10 @@
 
 .card--msp {
     background-color: #fcfcfc;
-    color: #7b838a;
+    color: #333;
     border: 1px solid #e9ecef;
     padding: 2.5rem;
     box-shadow: none !important;
-    transition: color 0.3s ease, opacity 0.3s ease;
-    opacity: 0.85;
     display: flex;
     align-items: center;
 }
@@ -106,8 +104,6 @@
 .card--msp:hover {
     transform: none !important;
     box-shadow: none !important;
-    color: #333;
-    opacity: 1;
 }
 
 /* SVG Placeholders */
@@ -130,7 +126,13 @@
     margin-right: 12px;
     margin-top: 2px;
     vertical-align: middle;
-    color: #a0a0a0;
+    color: var(--color-maroon);
+}
+.msp-icon path,
+.msp-icon circle,
+.msp-icon line,
+.msp-icon polyline {
+    stroke: var(--color-maroon);
 }
 
 /* Ensure standard heading typography matches about.css */
@@ -176,13 +178,6 @@
 }
 .card--msp:hover .msp-icon { 
     transform: scale(1.1); 
-    color: var(--color-maroon); 
-}
-.card--msp:hover .msp-icon path,
-.card--msp:hover .msp-icon circle,
-.card--msp:hover .msp-icon line,
-.card--msp:hover .msp-icon polyline {
-    stroke: var(--color-maroon); 
 }
 
 
