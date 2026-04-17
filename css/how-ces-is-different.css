@@ -1,6 +1,6 @@
 /* Intro Section Styles */
 .intro-section {
-    padding: 6rem 0 4rem;
+    padding: 3rem 0 4rem;
     background-color: var(--color-white);
 }
 
@@ -12,6 +12,9 @@
 }
 
 @media (min-width: 768px) {
+    .intro-section {
+        padding: 6rem 0 4rem;
+    }
     .intro-grid {
         flex-direction: row;
     }
