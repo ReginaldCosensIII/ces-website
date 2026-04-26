@@ -121,3 +121,56 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+/* --------------------------------------------------
+   Page-Specific: FAQ Dynamic Integration
+-------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.body.classList.contains('faq-page')) {
+        fetch('http://test.cesrebuild.com/api/seo/faqs')
+            .then(function(response) {
+                if (response.ok) {
+                    return response.text();
+                }
+                throw new Error('Network response was not ok');
+            })
+            .then(function(data) {
+                var script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.textContent = data;
+                document.head.appendChild(script);
+                console.log('Successfully injected dynamic FAQ schema.');
+
+                var faqData = JSON.parse(data);
+                var container = document.getElementById('dynamic-faq-container');
+                if (container && faqData.mainEntity) {
+                    faqData.mainEntity.forEach(function(item, index) {
+                        var details = document.createElement('details');
+                        details.className = 'faq-item';
+                        if (index === 0) {
+                            details.setAttribute('open', '');
+                        }
+
+                        var summary = document.createElement('summary');
+                        summary.textContent = item.name + ' ';
+                        var icon = document.createElement('span');
+                        icon.className = 'faq-icon';
+                        icon.setAttribute('aria-hidden', 'true');
+                        summary.appendChild(icon);
+
+                        var content = document.createElement('div');
+                        content.className = 'faq-content';
+                        // Assuming acceptedAnswer.text may contain paragraphs
+                        content.innerHTML = item.acceptedAnswer.text;
+
+                        details.appendChild(summary);
+                        details.appendChild(content);
+                        container.appendChild(details);
+                    });
+                }
+            })
+            .catch(function(error) {
+                console.error('Failed to fetch dynamic FAQ schema:', error);
+            });
+    }
+});
