@@ -24,6 +24,9 @@ The site utilizes a **component-based injection strategy** to centralize shared 
 2. **Phase 2 (Async):** The footer is injected into `#site-footer-root` on `DOMContentLoaded`.
 3. **Event Orchestration:** Dispatches a `headerInjected` event to signal `main.js` that navigation elements are ready for listener attachment.
 
+### Dynamic Pages
+- **FAQ Page (`/faq`):** Dynamically consumes both SEO Schema (JSON-LD) and visual UI content (Accordion) from the backend API. A single fetch payload populates both the invisible schema and the visible DOM, allowing CMS-driven content updates without redeploying static files. The page is organically linked in the main global navigation.
+
 ## 📂 Directory Structure
 - `/css`: Modular stylesheets (`styles.css`, `header.css`, `footer.css`, `about.css`)
 - `/js`: Site logic (`main.js`, `header-footer-injector.js`)
