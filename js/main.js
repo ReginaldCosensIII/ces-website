@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         details.appendChild(content);
                         container.appendChild(details);
                     });
+                    document.getElementById('dynamic-faq-container').classList.add('loaded');
                 }
             })
             .catch(function(error) {
