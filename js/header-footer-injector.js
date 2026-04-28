@@ -72,6 +72,7 @@
                         <li><a href="/about.html">About Us</a></li>\
                         <li><a href="/how-ces-is-different.html">How CES is Different</a></li>\
                         <li><a href="/referral-program.html">Referral Program</a></li>\
+                        <li><a href="/faq">FAQ</a></li>\
                         <li><a href="/contact-us.html">Contact Us</a></li>\
                     </ul>\
                 </li>\
@@ -144,6 +145,7 @@
         { match: /^\/how-ces-is-different/,href: '/how-ces-is-different.html' },
         { match: /^\/referral-program/,    href: '/referral-program.html' },
         { match: /^\/referral-thankyou/,   href: '/referral-program.html' },
+        { match: /^\/faq/,                 href: '/faq' },
         { match: /^\/contact-us/,          href: '/contact-us.html' },
         { match: /^\/ceo-ai-forum/,        href: '/ceo-ai-forum.html' },
         { match: /^\/$|^\/index/,          href: '/index.html' },
