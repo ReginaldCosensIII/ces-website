@@ -175,13 +175,13 @@
     }
 }
 
-#dynamic-faq-container {
+#dynamic-faq-container, #dynamic-techtips-container {
     opacity: 0;
     min-height: 600px; /* Prevents footer layout shift */
     transition: opacity 0.3s ease-in;
 }
 
-#dynamic-faq-container.loaded {
+#dynamic-faq-container.loaded, #dynamic-techtips-container.loaded {
     opacity: 1;
     min-height: auto;
 }
