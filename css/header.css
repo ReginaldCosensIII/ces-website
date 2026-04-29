@@ -279,7 +279,7 @@
 }
 
 .nav-active .nav-item--has-dropdown.dropdown-open .nav-dropdown {
-  max-height: 250px; /* increased for safety */
+  max-height: 400px; /* increased to accommodate Tech Tips and future items */
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
