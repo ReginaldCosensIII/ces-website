@@ -2,275 +2,155 @@
 <html lang="en">
 
 <head>
-  <!-- Meta Data -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CES Tech Tips | CES IT Services - Frederick, MD</title>
-  <meta name="description"
-    content="Read the latest tech tips and insights from CES IT Services on cybersecurity, managed IT, VoIP, and more." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Tips | CES IT Service Frederick MD</title>
+    <meta name="description"
+        content="Learn helpful IT and cybersecurity tech tips from our expert engineering team to secure and optimize your business operations.">
+    <!-- MUST explicitly omit .html extension for canonical -->
+    <link rel="canonical" href="https://www.cesitservice.com/tech-tips">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
 
-  <link rel="canonical" href="https://www.cesitservice.com/blog" />
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-  <link rel="apple-touch-icon" href="/images/favicon.ico" />
+    <!-- Global Styles (always in this order) -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/supporting-styles.css">
+    <link rel="stylesheet" href="/css/faq.css">
 
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/supporting-styles.css" />
-  <link rel="stylesheet" href="/css/main-blog.css" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tech Tips | CES IT Service">
+    <meta property="og:description"
+        content="Learn helpful IT and cybersecurity tech tips from our expert engineering team.">
+    <meta property="og:image" content="https://www.cesitservice.com/images/socials/tech-tips-meta-data-img.png">
+    <meta property="og:url" content="https://www.cesitservice.com/tech-tips">
+    <meta property="og:type" content="website">
 
-  <!-- Social -->
-  <meta property="og:title" content="CES Tech Tips | CES IT Services - Frederick, MD" />
-  <meta property="og:description"
-    content="Read the latest tech tips and insights from CES IT Services on cybersecurity, managed IT, VoIP, and more." />
-  <meta property="og:image" content="https://www.cesitservice.com/images/socials/ces-meta-data-img.png" />
-  <meta property="og:url" content="https://www.cesitservice.com/blog" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CES IT Services | CES Tech Tips" />
-  <meta name="twitter:description"
-    content="Read the latest tech tips and insights from CES IT Services on cybersecurity, managed IT, VoIP, and more." />
-  <meta name="twitter:image" content="https://www.cesitservice.com/images/socials/ces-meta-data-img.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@cesitservice">
+    <meta name="twitter:title" content="Tech Tips | CES IT Service">
+    <meta name="twitter:description"
+        content="Learn helpful IT and cybersecurity tech tips from our expert engineering team.">
+    <meta name="twitter:image" content="https://www.cesitservice.com/images/socials/tech-tips-meta-data-img.png">
 
-  <!-- Structured JSON Data -->
-  <script type="application/ld+json">{
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "url":"https://www.cesitservice.com/",
-    "name":"Computer Enhancement Systems, Inc.",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://www.cesitservice.com/tech-tips?q={search_term_string}",
-      "query-input":"required name=search_term_string"
-    }
-  }</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4XTG0R754"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T4XTG0R754');
+    </script>
 
-  <script type="application/ld+json">{
-    "@context":"https://schema.org",
-    "@type":"Blog",
-    "name":"CES Tech Tips",
-    "url":"https://www.cesitservice.com/tech-tips.html",
-    "publisher":{
-      "@type":"Organization",
-      "name":"Computer Enhancement Systems, Inc.",
-      "logo":{"@type":"ImageObject","url":"https://www.cesitservice.com/images/ceslogo.png"}
-    }
-  }</script>
-
-  <!-- GA -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4XTG0R754"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-T4XTG0R754');
-  </script>
+    <!-- Header/Footer Injection (synchronous in <head> — Zero CLS) -->
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
     <script src="/js/header-footer-injector.js"></script>
 </head>
 
-<body class="blog-page">
-  <div id="site-header-root"></div>
+<body class="tech-tips-page">
 
-  <main>
-    <!-- Shared hero styling from supporting-styles.css -->
-    <section class="page-hero blog-hero">
-      <div class="container">
-        <div class="page-hero-content">
-          <h1>CES Tech Tips</h1>
-          <p class="page-hero-subheading">Your source for the latest news, insights, and expert advice on IT,
-            cybersecurity, and business technology.</p>
-        </div>
-      </div>
-    </section>
+    <!-- Header Injection Point -->
+    <div id="site-header-root"></div>
+    <!-- Included for explicit request adherence -->
+    <div id="header-container" style="display: none;"></div>
 
-    <section class="blog-page-section">
-      <div class="container">
-        <!-- Category Tabs -->
-        <div class="category-filter-bar" id="categoryTabs" role="tablist" aria-label="Filter by category">
-          <a href="?category=all" class="category-filter-button" data-category="all" role="tab" aria-selected="true">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
-            </svg>
-            <span>All Posts</span>
-          </a>
-          <a href="?category=Cybersecurity" class="category-filter-button" data-category="Cybersecurity" role="tab"
-            aria-selected="false">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            <span>Cybersecurity</span>
-          </a>
-          <a href="?category=Managed IT" class="category-filter-button" data-category="Managed IT" role="tab"
-            aria-selected="false">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-              </path>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-              <line x1="12" y1="22.08" x2="12" y2="12"></line>
-            </svg>
-            <span>Managed IT</span>
-          </a>
-          <a href="?category=VoIP" class="category-filter-button" data-category="VoIP" role="tab" aria-selected="false">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z">
-              </path>
-            </svg>
-            <span>VoIP</span>
-          </a>
-        </div>
+    <main>
 
-        <!-- Tag filter (auto-populates from /blog.json using JS to select the most popular tags to display) -->
-        <!-- Popular Tags -->
-        <div class="tag-filter-bar" id="tagFilter" aria-label="Filter by tag">
-          <!-- injected by JS -->
-        </div>
-
-        <div class="blog-main-grid">
-          <!-- LEFT: main column -->
-          <div class="blog-main-content">
-            <!-- Featured / Pinned -->
-            <section class="pinned-post-section" id="featuredSection" hidden>
-              <h2>Featured Post</h2>
-              <article class="pinned-post-card" id="featuredCard">
-                <!-- injected by JS -->
-              </article>
-            </section>
-
-            <!-- Recent / Results -->
-            <section class="recent-articles-section">
-              <h2 id="resultsHeading">Recent Articles</h2>
-              <div class="article-card-grid" id="resultsGrid">
-                <!-- injected by JS -->
-              </div>
-            </section>
-
-            <!-- Pagination -->
-            <div class="main-pagination" id="pagination" hidden>
-              <!-- injected by JS -->
+        <!-- 1. HERO -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Tech Tips</h1>
+                    <p class="page-hero-subheading">Helpful insights and best practices from our expert engineering
+                        team.</p>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- RIGHT: sidebar -->
-          <aside class="blog-sidebar">
-            <!-- Find an Article -->
-            <div class="sidebar-card">
-              <h4>
-                <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <span>Find an Article</span>
-              </h4>
+        <!-- 2. MAIN FAQ CONTENT -->
+        <section class="faq-main-section">
+            <div class="faq-container">
+                <h2 class="faq-section-title">IT Insights & Best Practices</h2>
 
-              <form action="/tech-tips.html" method="get" class="sidebar-search-form" role="search"
-                aria-label="Find an article">
-                <div class="form-group">
-                  <label for="sidebar-search">Search by keyword</label>
-                  <input id="sidebar-search" name="q" type="search" placeholder="e.g., Cybersecurity"
-                    autocomplete="off" />
-                </div>
-                <div class="form-group">
-                  <label for="sidebar-category">Filter by category</label>
-                  <select id="sidebar-category" name="category">
-                    <option value="">All Categories</option>
-                    <option value="Cybersecurity">Cybersecurity</option>
-                    <option value="Managed IT">Managed IT</option>
-                    <option value="VoIP">VoIP</option>
-                    <option value="Company News">Company News</option>
-                  </select>
-                </div>
-                <button class="button-primary sidebar-search-button" type="submit">Search</button>
-              </form>
+                <div class="faq-accordion" id="dynamic-techtips-container"></div>
             </div>
+        </section>
 
-            <!-- Quick Links -->
-            <div class="sidebar-card">
-              <h4>
-                <svg class="icon icon-larger" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
-                  aria-hidden="true">
-                  <circle cx="12" cy="13" r="7"></circle>
-                  <line x1="12" y1="6" x2="12" y2="4"></line>
-                  <line x1="15.5" y1="6.5" x2="17" y2="5"></line>
-                  <line x1="12" y1="13" x2="12" y2="9.5"></line>
-                  <line x1="12" y1="13" x2="15" y2="13"></line>
-                </svg>
-                <span>Quick Links</span>
-              </h4>
-              <ul>
-                <li><a href="#"
-                    onclick="window.open('/book-call-form.html','BookACall','width=700,height=800,scrollbars=yes');return false;">Book
-                    a 15 Minute Call</a></li>
-                <li><a href="#"
-                    onclick="window.open('/scan-request-form.html','ScanRequest','width=850,height=800,scrollbars=yes');return false;">Request
-                    a Free Security Scan</a></li>
-                <li><a href="/contact-us.html">Contact Support</a></li>
-              </ul>
+        <!-- 3. BOTTOM CTA (matches pattern from other internal pages) -->
+        <section class="page-cta-section" style="background-color: var(--color-white);">
+            <div class="container">
+                <h2 class="page-cta-headline">Have Additional Questions?</h2>
+                <div class="page-cta-bottom-row">
+                    <div class="page-cta-supporting-text">
+                        <p>If you have specific questions about how your organization can benefit from the CES IT
+                            service model, our team is ready to help. We are committed to providing the transparency and
+                            expertise you need to make an informed technological decision.</p>
+                    </div>
+                    <!-- Link updated to include .html extension -->
+                    <a href="/contact-us.html" class="button-primary">Contact Our Team</a>
+                </div>
             </div>
+        </section>
 
-            <!-- Newsletter Card (progressive-consent) -->
-            <div class="sidebar-card">
-              <h4>
-                <svg class="icon icon-larger" viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="6" width="18" height="12" rx="2" ry="2"></rect>
-                  <polyline points="3,7 12,13 21,7"></polyline>
-                </svg>
-                <span>Newsletter Sign-Up</span>
-              </h4>
-
-              <form class="newsletter-form" id="newsletter-form"
-                action="https://ces-newsletter-api.azurewebsites.net/api/subscribe" method="post" novalidate
-                aria-describedby="newsletter-status">
-                <!-- Honeypot -->
-                <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-                  <label>Leave this field empty</label>
-                  <input type="text" name="company" tabindex="-1" autocomplete="off">
+        <!-- 4. FINAL BANNER (reusing tombstones structure site-wide) -->
+        <section class="final-banner">
+            <div class="tombstone-container">
+                <div class="tombstone">
+                    <h4>30+ Years</h4>
+                    <p>Delivering enterprise IT solutions.</p>
                 </div>
-
-                <div class="form-group">
-                  <label for="newsletter-email">Your email address</label>
-                  <input id="newsletter-email" name="email" type="email" placeholder="you@company.com" required>
+                <div class="tombstone">
+                    <h4>2–5 Minute</h4>
+                    <p>Technician<br>Response</p>
                 </div>
-
-                <!-- Progressive consent row (hidden until email validates) -->
-                <div class="form-group consent-row" id="newsletter-consent-row" aria-hidden="true">
-                  <input id="newsletter-consent" name="consent" type="checkbox" value="yes" style="margin-top:.35rem;">
-                  <label for="newsletter-consent" style="margin:0;">
-                    I agree to receive CES Tech Tips emails. I can unsubscribe at any time.
-                  </label>
+                <div class="tombstone">
+                    <h4>10+ Years</h4>
+                    <p>Average tenure of our engineers.</p>
                 </div>
-
-                <!-- Helpful context fields -->
-                <input type="hidden" name="source" value="blog-index-sidebar">
-                <input type="hidden" name="page" value="/tech-tips.html">
-
-                <button class="button-primary" type="submit" id="newsletter-submit">Subscribe</button>
-
-                <p id="newsletter-status" class="form-message" aria-live="polite" style="margin:.75rem 0 0;"></p>
-
-                <noscript>
-                  <p class="form-note" style="margin-top:.5rem;">
-                    JavaScript is disabled. Submitting will navigate to the signup endpoint.
-                  </p>
-                </noscript>
-              </form>
             </div>
+        </section>
 
-          </aside>
-        </div>
-      </div>
-    </section>
-  </main>
+    </main>
 
-  <div id="site-footer-root"></div>
+    <!-- Footer Injection Point -->
+    <div id="site-footer-root"></div>
+    <!-- Included for explicit request adherence -->
+    <div id="footer-container" style="display: none;"></div>
 
-  <script src="/js/main.js"></script>
-  <!-- Client-side dynamic wiring for categories, search, pagination, and rendering-->
-  <script src="/js/blog-index.js" defer></script>
-  <!-- Newsletter sign-up script -->
-  <script src="/js/newsletter.js" defer></script>
+    <script src="/js/main.js"></script>
 
+    <!-- Schema.org FAQ Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.cesitservice.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About Us",
+              "item": "https://www.cesitservice.com/about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Tech Tips",
+              "item": "https://www.cesitservice.com/tech-tips"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </body>
 
 </html>

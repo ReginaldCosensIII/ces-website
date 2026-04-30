@@ -175,3 +175,57 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 });
+
+/* --------------------------------------------------
+   Page-Specific: Tech Tips Dynamic Integration
+-------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.body.classList.contains('tech-tips-page')) {
+        fetch('http://test.cesrebuild.com/api/seo/techtips')
+            .then(function(response) {
+                if (response.ok) {
+                    return response.text();
+                }
+                throw new Error('Network response was not ok');
+            })
+            .then(function(data) {
+                var script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.textContent = data;
+                document.head.appendChild(script);
+                console.log('Successfully injected dynamic Tech Tips schema.');
+
+                var techTipsData = JSON.parse(data);
+                var container = document.getElementById('dynamic-techtips-container');
+                if (container && techTipsData.itemListElement) {
+                    techTipsData.itemListElement.forEach(function(listItem, index) {
+                        var item = listItem.item;
+                        var details = document.createElement('details');
+                        details.className = 'faq-item';
+                        if (index === 0) {
+                            details.setAttribute('open', '');
+                        }
+
+                        var summary = document.createElement('summary');
+                        summary.textContent = item.headline + ' ';
+                        var icon = document.createElement('span');
+                        icon.className = 'faq-icon';
+                        icon.setAttribute('aria-hidden', 'true');
+                        summary.appendChild(icon);
+
+                        var content = document.createElement('div');
+                        content.className = 'faq-content';
+                        content.innerHTML = item.text;
+
+                        details.appendChild(summary);
+                        details.appendChild(content);
+                        container.appendChild(details);
+                    });
+                    document.getElementById('dynamic-techtips-container').classList.add('loaded');
+                }
+            })
+            .catch(function(error) {
+                console.error('Failed to fetch dynamic Tech Tips schema:', error);
+            });
+    }
+});

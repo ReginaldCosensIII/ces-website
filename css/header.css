@@ -78,7 +78,20 @@
   background-color: #3a5c5c;
   max-height: 0;
   overflow: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   transition: max-height 0.35s ease;
+}
+
+/* Slim scrollbar for Android/Chrome */
+.header-nav-bar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.header-nav-bar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .main-nav-list {
@@ -141,7 +154,7 @@
 
 /* Mobile nav active state (JS toggles .nav-active on body) */
 .nav-active .header-nav-bar {
-  max-height: 600px; /* generous upper bound for transition */
+  max-height: calc(100vh - 90px); /* viewport height minus sticky header top bar */
 }
 
 .nav-active .main-nav-list {
@@ -279,7 +292,7 @@
 }
 
 .nav-active .nav-item--has-dropdown.dropdown-open .nav-dropdown {
-  max-height: 250px; /* increased for safety */
+  max-height: 400px; /* increased to accommodate Tech Tips and future items */
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
