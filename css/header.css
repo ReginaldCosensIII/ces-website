@@ -141,7 +141,7 @@
 
 /* Mobile nav active state (JS toggles .nav-active on body) */
 .nav-active .header-nav-bar {
-  max-height: 600px; /* generous upper bound for transition */
+  max-height: 1000px; /* generous upper bound for transition */
 }
 
 .nav-active .main-nav-list {
