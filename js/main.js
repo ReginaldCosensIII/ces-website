@@ -13,6 +13,22 @@
  * =====================================================
  */
 
+function getSafeEmbedUrl(url) {
+    if (!url) return null;
+    let match;
+    // YouTube
+    match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
+    if (match && match[1]) {
+        return `https://www.youtube.com/embed/${match[1]}`;
+    }
+    // Vimeo
+    match = url.match(/vimeo\.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|album\/(?:\d+)\/video\/|)(\d+)(?:$|\/|\?)/);
+    if (match && match[1]) {
+        return `https://player.vimeo.com/video/${match[1]}`;
+    }
+    return null;
+}
+
 /* --------------------------------------------------
    Mobile Navigation
    Handled by header-footer-injector.js → initMobileMenu().
@@ -220,6 +236,18 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                     details.appendChild(summary);
                     details.appendChild(content);
+
+                    // Video embed integration
+                    if (item.video && item.video.embedUrl) {
+                        const safeEmbedUrl = getSafeEmbedUrl(item.video.embedUrl);
+                        if (safeEmbedUrl) {
+                            var videoWrapper = document.createElement('div');
+                            videoWrapper.className = 'tech-tip-video-wrapper';
+                            videoWrapper.innerHTML = `<iframe src="${safeEmbedUrl}" title="Tech Tip Video" allowfullscreen></iframe>`;
+                            content.appendChild(videoWrapper);
+                        }
+                    }
+
                     container.appendChild(details);
                 });
                 container.classList.add('loaded');
