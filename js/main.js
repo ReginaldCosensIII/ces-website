@@ -13,6 +13,22 @@
  * =====================================================
  */
 
+function getSafeEmbedUrl(url) {
+    if (!url) return null;
+    let match;
+    // YouTube
+    match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
+    if (match && match[1]) {
+        return `https://www.youtube.com/embed/${match[1]}`;
+    }
+    // Vimeo
+    match = url.match(/vimeo\.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|album\/(?:\d+)\/video\/|)(\d+)(?:$|\/|\?)/);
+    if (match && match[1]) {
+        return `https://player.vimeo.com/video/${match[1]}`;
+    }
+    return null;
+}
+
 /* --------------------------------------------------
    Mobile Navigation
    Handled by header-footer-injector.js → initMobileMenu().
@@ -125,107 +141,123 @@ document.addEventListener('DOMContentLoaded', function () {
 /* --------------------------------------------------
    Page-Specific: FAQ Dynamic Integration
 -------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     if (document.body.classList.contains('faq-page')) {
-        fetch('http://test.cesrebuild.com/api/seo/faqs')
-            .then(function(response) {
-                if (response.ok) {
-                    return response.text();
-                }
-                throw new Error('Network response was not ok');
-            })
-            .then(function(data) {
-                var script = document.createElement('script');
-                script.type = 'application/ld+json';
-                script.textContent = data;
-                document.head.appendChild(script);
-                console.log('Successfully injected dynamic FAQ schema.');
+        try {
+            const response = await fetch('http://test.cesrebuild.com/api/seo/faqs');
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            
+            const data = await response.text();
+            var script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = data;
+            document.head.appendChild(script);
+            console.log('Successfully injected dynamic FAQ schema.');
 
-                var faqData = JSON.parse(data);
-                var container = document.getElementById('dynamic-faq-container');
-                if (container && faqData.mainEntity) {
-                    faqData.mainEntity.forEach(function(item, index) {
-                        var details = document.createElement('details');
-                        details.className = 'faq-item';
-                        if (index === 0) {
-                            details.setAttribute('open', '');
-                        }
+            var faqData = JSON.parse(data);
+            var container = document.getElementById('dynamic-faq-container');
+            if (container && faqData.mainEntity) {
+                faqData.mainEntity.forEach(function(item, index) {
+                    var details = document.createElement('details');
+                    details.className = 'faq-item';
+                    if (index === 0) {
+                        details.setAttribute('open', '');
+                    }
 
-                        var summary = document.createElement('summary');
-                        summary.textContent = item.name + ' ';
-                        var icon = document.createElement('span');
-                        icon.className = 'faq-icon';
-                        icon.setAttribute('aria-hidden', 'true');
-                        summary.appendChild(icon);
+                    var summary = document.createElement('summary');
+                    summary.textContent = item.name + ' ';
+                    var icon = document.createElement('span');
+                    icon.className = 'faq-icon';
+                    icon.setAttribute('aria-hidden', 'true');
+                    summary.appendChild(icon);
 
-                        var content = document.createElement('div');
-                        content.className = 'faq-content';
-                        // Assuming acceptedAnswer.text may contain paragraphs
-                        content.innerHTML = item.acceptedAnswer.text;
+                    var content = document.createElement('div');
+                    content.className = 'faq-content';
+                    // Assuming acceptedAnswer.text may contain paragraphs
+                    content.innerHTML = item.acceptedAnswer.text;
 
-                        details.appendChild(summary);
-                        details.appendChild(content);
-                        container.appendChild(details);
-                    });
-                    document.getElementById('dynamic-faq-container').classList.add('loaded');
-                }
-            })
-            .catch(function(error) {
-                console.error('Failed to fetch dynamic FAQ schema:', error);
-            });
+                    details.appendChild(summary);
+                    details.appendChild(content);
+                    container.appendChild(details);
+                });
+                container.classList.add('loaded');
+            }
+        } catch (error) {
+            console.error('Data Fetch Error:', error);
+            var container = document.getElementById('dynamic-faq-container');
+            if (container) {
+                container.innerHTML = "<div class='ces-error-state text-center p-4' style='border: 1px solid var(--border-color); border-radius: 8px;'><p>Content is temporarily unavailable. Please check back shortly.</p></div>";
+            }
+        }
     }
 });
 
 /* --------------------------------------------------
    Page-Specific: Tech Tips Dynamic Integration
 -------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     if (document.body.classList.contains('tech-tips-page')) {
-        fetch('http://test.cesrebuild.com/api/seo/techtips')
-            .then(function(response) {
-                if (response.ok) {
-                    return response.text();
-                }
-                throw new Error('Network response was not ok');
-            })
-            .then(function(data) {
-                var script = document.createElement('script');
-                script.type = 'application/ld+json';
-                script.textContent = data;
-                document.head.appendChild(script);
-                console.log('Successfully injected dynamic Tech Tips schema.');
+        try {
+            const response = await fetch('http://test.cesrebuild.com/api/seo/techtips');
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            
+            const data = await response.text();
+            var script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = data;
+            document.head.appendChild(script);
+            console.log('Successfully injected dynamic Tech Tips schema.');
 
-                var techTipsData = JSON.parse(data);
-                var container = document.getElementById('dynamic-techtips-container');
-                if (container && techTipsData.itemListElement) {
-                    techTipsData.itemListElement.forEach(function(listItem, index) {
-                        var item = listItem.item;
-                        var details = document.createElement('details');
-                        details.className = 'faq-item';
-                        if (index === 0) {
-                            details.setAttribute('open', '');
+            var techTipsData = JSON.parse(data);
+            var container = document.getElementById('dynamic-techtips-container');
+            if (container && techTipsData.itemListElement) {
+                techTipsData.itemListElement.forEach(function(listItem, index) {
+                    var item = listItem.item;
+                    var details = document.createElement('details');
+                    details.className = 'faq-item';
+                    if (index === 0) {
+                        details.setAttribute('open', '');
+                    }
+
+                    var summary = document.createElement('summary');
+                    summary.textContent = item.headline + ' ';
+                    var icon = document.createElement('span');
+                    icon.className = 'faq-icon';
+                    icon.setAttribute('aria-hidden', 'true');
+                    summary.appendChild(icon);
+
+                    var content = document.createElement('div');
+                    content.className = 'faq-content';
+                    content.innerHTML = item.text;
+
+                    details.appendChild(summary);
+                    details.appendChild(content);
+
+                    // Video embed integration
+                    if (item.video && item.video.embedUrl) {
+                        const safeEmbedUrl = getSafeEmbedUrl(item.video.embedUrl);
+                        if (safeEmbedUrl) {
+                            var videoWrapper = document.createElement('div');
+                            videoWrapper.className = 'tech-tip-video-wrapper';
+                            videoWrapper.innerHTML = `<iframe src="${safeEmbedUrl}" title="Tech Tip Video" allowfullscreen></iframe>`;
+                            content.appendChild(videoWrapper);
                         }
+                    }
 
-                        var summary = document.createElement('summary');
-                        summary.textContent = item.headline + ' ';
-                        var icon = document.createElement('span');
-                        icon.className = 'faq-icon';
-                        icon.setAttribute('aria-hidden', 'true');
-                        summary.appendChild(icon);
-
-                        var content = document.createElement('div');
-                        content.className = 'faq-content';
-                        content.innerHTML = item.text;
-
-                        details.appendChild(summary);
-                        details.appendChild(content);
-                        container.appendChild(details);
-                    });
-                    document.getElementById('dynamic-techtips-container').classList.add('loaded');
-                }
-            })
-            .catch(function(error) {
-                console.error('Failed to fetch dynamic Tech Tips schema:', error);
-            });
+                    container.appendChild(details);
+                });
+                container.classList.add('loaded');
+            }
+        } catch (error) {
+            console.error('Data Fetch Error:', error);
+            var container = document.getElementById('dynamic-techtips-container');
+            if (container) {
+                container.innerHTML = "<div class='ces-error-state text-center p-4' style='border: 1px solid var(--border-color); border-radius: 8px;'><p>Content is temporarily unavailable. Please check back shortly.</p></div>";
+            }
+        }
     }
 });
