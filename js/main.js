@@ -242,8 +242,25 @@ document.addEventListener('DOMContentLoaded', async function () {
                         const safeEmbedUrl = getSafeEmbedUrl(item.video.embedUrl);
                         if (safeEmbedUrl) {
                             var videoWrapper = document.createElement('div');
-                            videoWrapper.className = 'tech-tip-video-wrapper';
-                            videoWrapper.innerHTML = `<iframe src="${safeEmbedUrl}" title="Tech Tip Video" allowfullscreen></iframe>`;
+                            videoWrapper.className = 'video-container';
+                            var iframe = document.createElement('iframe');
+                            iframe.title = "Tech Tip Video";
+                            iframe.allowFullscreen = true;
+                            
+                            if (index === 0) {
+                                iframe.src = safeEmbedUrl;
+                            } else {
+                                iframe.dataset.src = safeEmbedUrl;
+                                details.addEventListener('toggle', function() {
+                                    if (details.open && !iframe.src) {
+                                        requestAnimationFrame(() => {
+                                            iframe.src = iframe.dataset.src;
+                                        });
+                                    }
+                                });
+                            }
+                            
+                            videoWrapper.appendChild(iframe);
                             content.appendChild(videoWrapper);
                         }
                     }
