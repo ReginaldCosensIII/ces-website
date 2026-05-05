@@ -186,17 +186,18 @@
     min-height: auto;
 }
 
-.tech-tip-video-wrapper {
+.video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    width: 100%;
     overflow: hidden;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.tech-tip-video-wrapper iframe {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
