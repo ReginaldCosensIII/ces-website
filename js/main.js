@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', async function () {
     if (document.body.classList.contains('faq-page')) {
         try {
-            const response = await fetch('http://test.cesrebuild.com/api/seo/faqs');
+            const response = await fetch('/api/seo/faqs');
             if (!response.ok) {
                 throw new Error(response.status);
             }
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 document.addEventListener('DOMContentLoaded', async function () {
     if (document.body.classList.contains('tech-tips-page')) {
         try {
-            const response = await fetch('http://test.cesrebuild.com/api/seo/techtips');
+            const response = await fetch('/api/seo/techtips');
             if (!response.ok) {
                 throw new Error(response.status);
             }
