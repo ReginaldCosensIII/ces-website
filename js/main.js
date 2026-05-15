@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 document.addEventListener('DOMContentLoaded', async function () {
     if (document.body.classList.contains('tech-tips-page')) {
         try {
-            const response = await fetch('/api/seo/techtips');
+            const response = await fetch('/api/seo/tech-tips');
             if (!response.ok) {
                 throw new Error(response.status);
             }
