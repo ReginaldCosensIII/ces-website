@@ -154,7 +154,14 @@
 
 /* Mobile nav active state (JS toggles .nav-active on body) */
 .nav-active .header-nav-bar {
-  max-height: calc(100vh - 90px); /* viewport height minus sticky header top bar */
+  /* Fallback for older browsers */
+  max-height: calc(100vh - 120px);
+
+  /* Modern dynamic viewport accounting for address and OS navigation bars */
+  max-height: calc(100dvh - 95px);
+
+  /* Safe-zone insurance to explicitly push the lowest nav link up from the device bezel */
+  padding-bottom: max(40px, env(safe-area-inset-bottom));
 }
 
 .nav-active .main-nav-list {
