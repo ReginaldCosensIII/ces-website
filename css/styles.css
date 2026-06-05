@@ -288,7 +288,7 @@ a:hover {
   content: "";
 }
 
-.forum-banner-title {
+.promo-banner-title {
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-dark-slate);
@@ -296,7 +296,7 @@ a:hover {
   line-height: 1.2;
 }
 
-.forum-banner-title span {
+.promo-banner-title span {
   display: block;
   font-weight: 700;
   text-transform: uppercase;
@@ -307,7 +307,7 @@ a:hover {
   margin-bottom: 0.25rem;
 }
 
-.forum-banner-details {
+.promo-banner-details {
   min-width: fit-content;
   color: var(--color-maroon);
   font-weight: 700;
@@ -316,11 +316,11 @@ a:hover {
   text-align: center;
 }
 
-.forum-banner-description {
+.promo-banner-description {
   font-size: 0.95rem;
   line-height: 1.45;
   color: var(--color-text);
-  max-width: 420px;
+  max-width: 680px;
   margin: 0;
   text-align: center;
 }
@@ -354,7 +354,7 @@ a:hover {
     display: none;
   }
 
-  .forum-banner-description {
+  .promo-banner-description {
     max-width: 100%;
   }
 
@@ -379,12 +379,12 @@ a:hover {
     gap: 1.5rem;
   }
 
-  .forum-banner-title {
+  .promo-banner-title {
     font-size: 1.85rem;
     white-space: normal;
   }
 
-  .forum-banner-details {
+  .promo-banner-details {
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
